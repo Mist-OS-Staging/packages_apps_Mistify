@@ -163,13 +163,7 @@
             android:fragment="com.rising.settings.fragments.Wallpaper"
             lineage:position="top"/>
 
-        <com.android.settings.preferences.SystemSettingSwitchPreference
-            android:key="pie_animation_style"
-            android:title="@string/pie_animation_style_title"
-            android:summary="@string/pie_animation_style_summary"
-            android:defaultValue="false" />
-
-        <!-- Screen Off animation -->
+      <!-- Screen Off animation -->
         <com.android.settings.preferences.SystemSettingListPreference
             android:key="screen_off_animation"
             android:icon="@drawable/ic_television_classic"
@@ -178,7 +172,20 @@
             android:entries="@array/screen_off_animation_entries"
             android:entryValues="@array/screen_off_animation_values"
             android:defaultValue="0"
-            lineage:position="bottom" />
+            android:summary="%s"
+             />
+             
+        <!-- System animation styles -->
+        <com.android.settings.preferences.SystemSettingListPreference
+            android:key="system_animation_style"
+            android:icon="@drawable/ic_system_animation"
+            android:title="@string/system_animation_style_title"
+            android:dialogTitle="@string/system_animation_style_title"
+            android:entries="@array/system_animation_styles_entries"
+            android:entryValues="@array/system_animation_styles_values"
+            android:defaultValue="0"
+            android:summary="%s"
+            />
 
     </PreferenceCategory>
 
