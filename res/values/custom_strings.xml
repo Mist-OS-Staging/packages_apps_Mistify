@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Tensor spoof -->
+    <string name="tensor_spoof_title">Spoof tensor features</string>
+    <string name="tensor_spoof_summary">Unlock tensor/pixel features</string>
+
     <!-- Split Shade -->
     <string name="qs_split_shade_enabled_title">Better Landscape QS (EXPERIMENTAL)</string>
     <string name="qs_split_shade_enabled_summary">Enable new experimental split shade quicksettings,\nbreaks landscape headsup notifications</string>
