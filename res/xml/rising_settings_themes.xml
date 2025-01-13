@@ -94,14 +94,6 @@
              android:summary="%s"
              android:defaultValue="0" />
 
-        <!-- Signal icon style -->
-        <com.android.settings.preferences.ui.AdaptivePreference
-            android:key="android.theme.customization.signal_icon"
-            android:icon="@drawable/ic_signal"
-            android:title="@string/theme_customization_signal_icon_title"
-            android:summary="@string/theme_customization_signal_icon_summary"
-            android:fragment="com.rising.settings.fragments.ui.SignalIcons"/>
-
         <!-- Progress Bar Styles -->      
         <com.android.settings.preferences.SystemSettingListPreference
              android:key="progress_bar_style"
