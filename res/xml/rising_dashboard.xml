@@ -72,7 +72,7 @@
             android:icon="@drawable/ic_key"
             android:title="@string/spoofing_title"
             android:summary="@string/spoofing_title_summary"
-            android:fragment="com.rising.settings.fragments.Spoof" />
+            android:fragment="com.rising.settings.fragments.Spoofing" />
 
         <!-- Sound -->
         <com.android.settings.preferences.ui.AdaptivePreference
