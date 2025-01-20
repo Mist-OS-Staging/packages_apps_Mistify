@@ -127,8 +127,16 @@
             android:icon="@drawable/ic_home"
             android:title="@string/quickswitch_launcher_title" 
             android:summary="@string/quickswitch_launcher_summary" 
-            android:fragment="com.rising.settings.fragments.QuickSwitch"
-            lineage:position="bottom" /> 
+            android:fragment="com.rising.settings.fragments.QuickSwitch" />
+
+       <!-- Floating rotation button -->
+        <com.android.settings.preferences.SecureSettingSwitchPreference
+            android:key="show_rotation_suggestions"
+            android:title="@string/floating_rotation_button_title"
+            android:summary="@string/floating_rotation_button_summary"
+            lineage:position="bottom"
+            android:defaultValue="true"
+            />
 
     </PreferenceCategory>
 
