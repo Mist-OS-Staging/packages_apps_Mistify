@@ -2124,8 +2124,4 @@
     <string name="extra_header">Extra</string>
     <string name="system_gesture_summary">Unlock a new level of interaction with gesture control</string>
     <string name="qs_tiles_layout_category">QS Layout</string>
-
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Google Play Integrity spoof</string>
-    <string name="pi_spoof_summary">Spoof your device as different model for Google Play Integrity</string>
 </resources>

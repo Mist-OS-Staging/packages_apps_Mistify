@@ -53,12 +53,6 @@
 
         <!-- GMS spoof -->
         <com.android.settings.preferences.SystemPropertySwitchPreference
-            android:key="persist.sys.pihooks.pi"
-            android:title="@string/pi_spoof_title"
-            android:summary="@string/pi_spoof_summary"
-            android:defaultValue="true" />
-
-        <com.android.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.gms"
             android:title="@string/gms_spoof_title"
             android:summary="@string/gms_spoof_summary"
