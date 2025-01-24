@@ -79,6 +79,18 @@
              android:fragment="com.android.settings.gestures.GestureSettings"
              settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
+        <!-- Freeform launch mode -->
+        <com.android.settings.preferences.SystemSettingListPreference
+            android:key="freeform_launch_mode"
+            android:icon="@drawable/freeform"
+            android:title="@string/freeform_launch_mode_title"
+            android:dialogTitle="@string/freeform_launch_mode_title"
+            android:entries="@array/freeform_launch_mode_entries"
+            android:entryValues="@array/freeform_launch_mode_values"
+            android:defaultValue="0"
+            android:summary="%s"
+         />
+
         <!-- Sidebar -->
         <com.android.settings.preferences.ui.AdaptivePreference
             android:key="sidebar"
@@ -132,6 +144,7 @@
        <!-- Floating rotation button -->
         <com.android.settings.preferences.SecureSettingSwitchPreference
             android:key="show_rotation_suggestions"
+            android:icon="@drawable/rotation"
             android:title="@string/floating_rotation_button_title"
             android:summary="@string/floating_rotation_button_summary"
             lineage:position="bottom"
