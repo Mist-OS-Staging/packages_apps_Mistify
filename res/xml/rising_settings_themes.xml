@@ -136,8 +136,18 @@
             android:icon="@drawable/ic_wifi"
             android:title="@string/theme_customization_wifi_icon_title"
             android:summary="@string/theme_customization_wifi_icon_summary"
-            android:fragment="com.rising.settings.fragments.ui.WifiIcons"
-            lineage:position="bottom"/>
+            android:fragment="com.rising.settings.fragments.ui.WifiIcons" />
+
+        <!-- Hide NavBar -->      
+        <com.android.settings.preferences.SystemSettingListPreference
+             android:key="hide_ime_space_style"
+             android:title="@string/hide_ime_space_style_title"
+             android:icon="@drawable/ic_navbar_mode"
+             android:entries="@array/hide_ime_space_style_entries"
+             android:entryValues="@array/hide_ime_space_style_values"
+             android:summary="%s"
+             lineage:position="bottom"
+             android:defaultValue="0" />
 
     </PreferenceCategory>
     
