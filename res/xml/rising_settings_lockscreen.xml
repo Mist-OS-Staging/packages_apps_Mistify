@@ -107,7 +107,11 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
-        
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="lockscreen_shortcuts"
+            android:title="@string/lockscreen_shortcut_category"
+            android:summary="@string/lockscreen_shortcuts_summary"
+            android:fragment="com.rising.settings.fragments.lockscreen.LockscreenShortcuts" />
 
         <com.android.settings.preferences.ui.AdaptivePreference
             android:key="peek_display"
