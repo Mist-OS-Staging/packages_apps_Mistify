@@ -33,6 +33,7 @@ import com.android.internal.util.android.ThemeUtils;
 
 import java.util.List;
 
+
 @SearchIndexable
 public class Themes extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -88,8 +89,8 @@ public class Themes extends SettingsPreferenceFragment implements
     private Preference mProgressBarPref;
     private Preference mNotificationStylePref;
     private Preference mPowerMenuStylePref;
-    private Preference mBrightnessBarPref;
     private Preference mHideImePref;
+    private Preference mBrightnessBarPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,24 +104,14 @@ public class Themes extends SettingsPreferenceFragment implements
         mNotificationStylePref = findPreference(KEY_NOTIF_STYLE);
         mNotificationStylePref.setOnPreferenceChangeListener(this);
 
-        mPowerMenuStylePref = findPreference(KEY_POWERMENU_STYLE);
-        mPowerMenuStylePref.setOnPreferenceChangeListener(this);
-
         mBrightnessBarPref = findPreference(KEY_PBB_STYLE);
         mBrightnessBarPref.setOnPreferenceChangeListener(this);
-        
+
         mHideImePref = findPreference(KEY_HIDE_IME_STYLE);
         mHideImePref.setOnPreferenceChangeListener(this);
 
-        com.android.settingslib.widget.LayoutPreference highlightPref = getPreferenceScreen().findPreference("themes_highlight_dashboard");
-        if (highlightPref != null) {
-            java.util.Map<Integer, String> highlightClickMap = new java.util.HashMap<>();
-            highlightClickMap.put(R.id.boot_styles_tile, "PersonalizationsBSActivity");
-            highlightClickMap.put(R.id.icon_pack_tile, "PersonalizationsIconPackActivity");
-            highlightClickMap.put(R.id.settings_tile, "PersonalizationsSettingsUIActivity");
-            highlightClickMap.put(R.id.wallpaper_styles_tile, "PersonalizationsWSActivity");
-            com.android.settings.utils.HighlightPrefUtils.Companion.setupHighlightPref(getContext(), highlightPref, highlightClickMap);
-        }
+        mPowerMenuStylePref = findPreference(KEY_POWERMENU_STYLE);
+        mPowerMenuStylePref.setOnPreferenceChangeListener(this);
     }
 
     private void updateStyle(String key, String category, String target, 
@@ -138,9 +129,6 @@ public class Themes extends SettingsPreferenceFragment implements
         if (style > 0 && style <= overlayPackages.length) {
             mThemeUtils.setOverlayEnabled(category, overlayPackages[style - 1], target);
         }
-        if (restartSystemUI) {
-            SystemRestartUtils.restartSystemUI(getContext());
-        }
     }
 
     private void updatePowerMenuStyle() {
@@ -151,16 +139,16 @@ public class Themes extends SettingsPreferenceFragment implements
         updateStyle(KEY_NOTIF_STYLE, "android.theme.customization.notification", "com.android.systemui", 0, NOTIF_OVERLAYS, true);
     }
 
-    private void updateProgressBarStyle() {
-        updateStyle(KEY_PGB_STYLE, "android.theme.customization.progress_bar", "android", 0, PROGRESS_BAR_OVERLAYS, false);
+    private void updateHideImeSpaceStyle() {
+        updateStyle(KEY_HIDE_IME_STYLE, "android.theme.customization.hide_ime_space", "android", 0, HIDE_IME_OVERLAYS, false);
     }
-    
+
     private void updateBrightnessBarStyle() {
         updateStyle(KEY_PBB_STYLE, "android.theme.customization.brightness", "android", 0, BRIGHTNESS_BAR_OVERLAYS, false);
     }
-    
-    private void updateHideImeSpaceStyle() {
-        updateStyle(KEY_HIDE_IME_STYLE, "android.theme.customization.hide_ime_space", "android", 0, HIDE_IME_OVERLAYS, false);
+
+    private void updateProgressBarStyle() {
+        updateStyle(KEY_PGB_STYLE, "android.theme.customization.progress_bar", "android", 0, PROGRESS_BAR_OVERLAYS, false);
     }
 
     @Override
@@ -200,6 +188,7 @@ public class Themes extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.VIEW_UNKNOWN;
     }
+    
 
     /**
      * For search
