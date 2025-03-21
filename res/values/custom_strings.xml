@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Nowbar height -->
+    <string name="now_bar_height_title">Nowbar height</string>
+    <string name="now_bar_height_summary">Adjust the height of the Nowbar</string>
+
     <!-- Brightness bar styles -->
     <string name="brightness_bar_style_title">Brightness bar style</string>
     <string name="brightness_bar_style1">Acun</string>
