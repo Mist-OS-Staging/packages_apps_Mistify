@@ -73,7 +73,7 @@
         android:layout="@layout/mist_first_header_pref"
         android:title="@string/notification_style">
 
-        <!-- Notification Styles -->      
+        <!-- Notification Styles -->
         <com.android.settings.preferences.SystemSettingListPreference
              android:key="notification_style"
              android:title="@string/notif_style_title"
@@ -84,14 +84,13 @@
              lineage:position="top"
              android:defaultValue="0" />
 
-        <com.android.settings.preferences.SystemSettingListPreference
-             android:key="brightness_bar_style"
-             android:title="@string/brightness_bar_style_title"
+        <!-- Brightness Bar Styles -->
+        <com.android.settings.preferences.ui.AdaptivePreference
+             android:key="android.theme.customization.brightness_slider"
              android:icon="@drawable/ic_brightness"
-             android:entries="@array/brightness_bar_style_entries"
-             android:entryValues="@array/brightness_bar_style_values"
-             android:summary="%s"
-             android:defaultValue="0" />
+             android:title="@string/theme_customization_brightness_slider_title"
+             android:summary="@string/theme_customization_brightness_slider_summary"
+             android:fragment="com.rising.settings.fragments.BrightnessSlider" />
 
         <!-- Power Menu Styles -->      
         <com.android.settings.preferences.SystemSettingListPreference

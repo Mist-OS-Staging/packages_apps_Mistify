@@ -16,37 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Brightness Bar style  -->
-    <string-array name="brightness_bar_style_entries">
-        <item>@string/color_default</item>
-        <item>@string/brightness_bar_style1</item>
-        <item>@string/brightness_bar_style2</item>
-        <item>@string/brightness_bar_style3</item>
-        <item>@string/brightness_bar_style4</item>
-        <item>@string/brightness_bar_style5</item>
-        <item>@string/brightness_bar_style6</item>
-        <item>@string/brightness_bar_style7</item>
-        <item>@string/brightness_bar_style8</item>
-        <item>@string/brightness_bar_style9</item>
-        <item>@string/brightness_bar_style10</item>
-        <item>@string/brightness_bar_style11</item>
-    </string-array>
-
-    <string-array name="brightness_bar_style_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-    </string-array>
-
     <!-- Double power button press -->
     <string-array name="power_button_entries">
         <item>@string/lockscreen_shortcut_none</item>
