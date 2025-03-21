@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Clock size -->
+     <string name="statusbar_clock_size_title">Clock Size (Statusbar)</string>
+     <string name="qs_clock_size_title">Clock Size (QS)</string>
+
     <!-- Statusbar Custom color -->
      <string name="status_bar_logo_use_custom_color_title">Status bar logo custom color</string>
      <string name="status_bar_logo_use_custom_color_summary">Enable Status bar logo custom color</string>
