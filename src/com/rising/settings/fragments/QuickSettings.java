@@ -35,6 +35,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.internal.util.android.ThemeUtils;
 
 import com.android.settings.preferences.CustomSeekBarPreference;
+import com.android.settings.preferences.SystemSettingSeekBarPreference;
 
 import com.android.settings.utils.SystemRestartUtils;
 
@@ -59,6 +60,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mTileAnimationDuration;
     private Preference mSplitShadePref;
 
+    private SystemSettingSeekBarPreference mNotificationCornerRadius;
+
     private ThemeUtils mThemeUtils;
 
     private Handler mHandler = new Handler();
@@ -82,6 +85,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mSplitShadePref = (Preference) findPreference("qs_split_shade_enabled");
         mSplitShadePref.setOnPreferenceChangeListener(this);
 
+        mNotificationCornerRadius = (SystemSettingSeekBarPreference) findPreference("notification_corner_radius");
+         mNotificationCornerRadius.setOnPreferenceChangeListener(this);
 
         mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
         mTileAnimationDuration = (CustomSeekBarPreference) findPreference(KEY_PREF_TILE_ANIM_DURATION);
@@ -123,6 +128,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                    "qs_split_shade_enabled", value, UserHandle.USER_CURRENT);
             updateSplitShadeEnabled(getActivity());
             return true;
+        } else if (preference.getKey().equals("notification_corner_radius")) {
+             int newRadius = (int) newValue;
+             Settings.System.putIntForUser(resolver,
+                     "notification_corner_radius", newRadius, UserHandle.USER_CURRENT);
+ 
+             new Handler().postDelayed(() -> SystemRestartUtils.restartSystemUI(getContext()), 75);
+             return true;
         }
         return false;
     }
