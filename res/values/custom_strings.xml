@@ -20,6 +20,10 @@
     <string name="now_bar_height_title">Nowbar height</string>
     <string name="now_bar_height_summary">Adjust the height of the Nowbar</string>
 
+    <!-- Notifications/Island notification -->
+    <string name="notifications_island_notification_title">Island notification</string>
+    <string name="notifications_island_notification_summary">Display heads-up notification in IOS \'Dynamic Island\' style</string>
+
     <!-- Brightness bar styles -->
     <string name="brightness_bar_style_title">Brightness bar style</string>
     <string name="brightness_bar_style1">Acun</string>
