@@ -110,6 +110,9 @@ public class Themes extends SettingsPreferenceFragment implements
         if (style > 0 && style <= overlayPackages.length) {
             mThemeUtils.setOverlayEnabled(category, overlayPackages[style - 1], target);
         }
+        if (restartSystemUI) {
+            SystemRestartUtils.showSystemUIRestartDialog(getContext());
+        }
     }
 
     private void updatePowerMenuStyle() {

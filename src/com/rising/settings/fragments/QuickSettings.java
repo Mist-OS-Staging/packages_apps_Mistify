@@ -100,27 +100,42 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         if (preference == mQsUI) {
             int value = Integer.parseInt((String) newValue);
+            int currentValue = Settings.System.getIntForUser(resolver,
+                    Settings.System.QS_TILE_UI_STYLE, 0, UserHandle.USER_CURRENT);
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_TILE_UI_STYLE, value, UserHandle.USER_CURRENT);
             updateQsStyle(getActivity());
             checkQSOverlays(getActivity());
+            if (currentValue != value) {
+                SystemRestartUtils.showSystemUIRestartDialog(getActivity());
+            }
             return true;
         } else if (preference == mQsPanelStyle) {
             int value = Integer.parseInt((String) newValue);
+            int currentValue = Settings.System.getIntForUser(resolver,
+                    Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_PANEL_STYLE, value, UserHandle.USER_CURRENT);
             updateQsPanelStyle(getActivity());
             checkQSOverlays(getActivity());
             return true;
+            if (currentValue != value) {
+                SystemRestartUtils.showSystemUIRestartDialog(getActivity());
+            }
         } else if (preference == mTileAnimationStyle) {
             int value = Integer.parseInt((String) newValue);
             updateAnimTileStyle(value);
             return true;
         } else if (preference == mSplitShadePref) {
             int value = (boolean) newValue ? 1 : 0;
+            int currentValue = Settings.System.getIntForUser(resolver,
+                   "qs_split_shade_enabled", 0, UserHandle.USER_CURRENT);
             Settings.System.putIntForUser(resolver,
                    "qs_split_shade_enabled", value, UserHandle.USER_CURRENT);
             updateSplitShadeEnabled(getActivity());
+            if (currentValue != value) {
+                SystemRestartUtils.showSystemUIRestartDialog(getActivity());
+            }
             return true;
         }
         return false;
