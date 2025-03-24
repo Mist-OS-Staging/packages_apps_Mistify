@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Idle manager -->
+    <string name="idle_manager_title">Idle manager</string>
+    <string name="idle_manager_summary">Stop all non-essential background processes when the device is idle</string>
+
     <!-- Clock size -->
      <string name="statusbar_clock_size_title">Clock Size (Statusbar)</string>
      <string name="qs_clock_size_title">Clock Size (QS)</string>
