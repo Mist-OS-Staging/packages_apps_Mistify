@@ -119,9 +119,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updateQsPanelStyle(getActivity());
             checkQSOverlays(getActivity());
             return true;
-            if (currentValue != value) {
-                SystemRestartUtils.showSystemUIRestartDialog(getActivity());
-            }
         } else if (preference == mTileAnimationStyle) {
             int value = Integer.parseInt((String) newValue);
             updateAnimTileStyle(value);
