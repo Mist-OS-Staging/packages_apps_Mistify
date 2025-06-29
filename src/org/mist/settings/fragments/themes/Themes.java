@@ -8,7 +8,6 @@ package org.mist.settings.fragments.themes;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
-import android.hardware.fingerprint.FingerprintManager;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.os.SystemProperties;
@@ -45,16 +44,11 @@ public class Themes extends SettingsPreferenceFragment implements
     private static final String KEY_UNLOCK_SOUND = "unlock_sound";
     private static final String KEY_ICONS_CATEGORY = "themes_icons_category";
     private static final String KEY_SIGNAL_ICON = "android.theme.customization.signal_icon";
-    private static final String KEY_UDFPS_ICON = "udfps_icon";
     private static final String KEY_ANIMATIONS_CATEGORY = "themes_animations_category";
-    private static final String KEY_UDFPS_ANIMATION = "udfps_animation";
     private static final String KEY_PGB_STYLE = "progress_bar_style";
     private static final String KEY_NOTIF_STYLE = "notification_style";
     private static final String KEY_POWERMENU_STYLE = "powermenu_style";
     private static final String KEY_LAUNCHER_CATEGORY = "themes_launcher_category";
-
-    private static final String KEY_EXPRESSIVE_DESIGN = "expressive_design";
-    private static final String PROP_EXPRESSIVE_DESIGN = "persist.sys.is_expressive_design_enabled";
 
     private static final String[] POWER_MENU_OVERLAYS = {
             "com.android.theme.powermenu.cyberpunk",
@@ -83,9 +77,7 @@ public class Themes extends SettingsPreferenceFragment implements
     private PreferenceCategory mLauncherCategory;
     private PreferenceCategory mIconsCategory;
     private Preference mSignalIcon;
-    private Preference mUdfpsIcon;
     private PreferenceCategory mAnimationsCategory;
-    private Preference mUdfpsAnimation;
     private SystemSettingListPreference mNotificationStylePref;
     private SystemSettingListPreference mPowerMenuStylePref;
     private SystemSettingListPreference mProgressBarPref;
@@ -109,27 +101,10 @@ public class Themes extends SettingsPreferenceFragment implements
         mLauncherCategory = (PreferenceCategory) findPreference(KEY_LAUNCHER_CATEGORY);
         mIconsCategory = (PreferenceCategory) findPreference(KEY_ICONS_CATEGORY);
         mSignalIcon = (Preference) findPreference(KEY_SIGNAL_ICON);
-        mUdfpsIcon = (Preference) findPreference(KEY_UDFPS_ICON);
         mAnimationsCategory = (PreferenceCategory) findPreference(KEY_ANIMATIONS_CATEGORY);
-        mUdfpsAnimation = (Preference) findPreference(KEY_UDFPS_ANIMATION);
 
         if (!DeviceUtils.deviceSupportsMobileData(context)) {
             mIconsCategory.removePreference(mSignalIcon);
-        }
-
-        FingerprintManager fingerprintManager = (FingerprintManager)
-                getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-
-        if (fingerprintManager == null || !fingerprintManager.isHardwareDetected()) {
-            mIconsCategory.removePreference(mUdfpsIcon);
-            mAnimationsCategory.removePreference(mUdfpsAnimation);
-        } else {
-            if (!Utils.isPackageInstalled(context, "org.mist.udfps.icons")) {
-                mIconsCategory.removePreference(mUdfpsIcon);
-            }
-            if (!Utils.isPackageInstalled(context, "org.mist.udfps.animations")) {
-                mAnimationsCategory.removePreference(mUdfpsAnimation);
-            }
         }
 
         mProgressBarPref = findPreference(KEY_PGB_STYLE);
@@ -145,11 +120,6 @@ public class Themes extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mLauncherCategory);
         }
 
-        SwitchPreferenceCompat expressiveDesign = findPreference(KEY_EXPRESSIVE_DESIGN);
-        if (expressiveDesign != null) {
-            expressiveDesign.setChecked(SystemProperties.getBoolean(PROP_EXPRESSIVE_DESIGN, false));
-            expressiveDesign.setOnPreferenceChangeListener(this);
-        }
     }
 
     private void updateStyle(String key, String category, String target,
@@ -217,10 +187,6 @@ public class Themes extends SettingsPreferenceFragment implements
                     KEY_POWERMENU_STYLE, value, UserHandle.USER_CURRENT);
             updatePowerMenuStyle();
             return true;
-        } else if (preference.getKey().equals(KEY_EXPRESSIVE_DESIGN)) {
-            boolean boolValue = (Boolean) newValue;
-            SystemProperties.set(PROP_EXPRESSIVE_DESIGN, boolValue ? "1" : "0");
-            return true;
         }
         return false;
     }
@@ -238,9 +204,6 @@ public class Themes extends SettingsPreferenceFragment implements
                 List<String> keys = super.getNonIndexableKeys(context);
                 final Resources resources = context.getResources();
 
-                FingerprintManager fingerprintManager = (FingerprintManager)
-                        context.getSystemService(Context.FINGERPRINT_SERVICE);
-
                 if (!DeviceUtils.deviceSupportsMobileData(context)) {
                     keys.add(KEY_SIGNAL_ICON);
                 }
@@ -249,17 +212,6 @@ public class Themes extends SettingsPreferenceFragment implements
                     keys.add(KEY_LAUNCHER_CATEGORY);
                 }
 
-                if (fingerprintManager == null || !fingerprintManager.isHardwareDetected()) {
-                    keys.add(KEY_UDFPS_ICON);
-                    keys.add(KEY_UDFPS_ANIMATION);
-                } else {
-                    if (!Utils.isPackageInstalled(context, "org.mist.udfps.icons")) {
-                        keys.add(KEY_UDFPS_ICON);
-                    }
-                    if (!Utils.isPackageInstalled(context, "org.mist.udfps.animations")) {
-                        keys.add(KEY_UDFPS_ANIMATION);
-                    }
-                }
                 return keys;
             }
         };

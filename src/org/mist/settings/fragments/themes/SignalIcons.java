@@ -30,18 +30,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.mist.ThemeUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public class SignalIcons extends SettingsPreferenceFragment {
+public class SignalIcons extends Fragment {
 
     private static final String TAG = "SignalIcons";
 
@@ -76,11 +75,6 @@ public class SignalIcons extends SettingsPreferenceFragment {
             mRecyclerView.setAdapter(null);
             mRecyclerView = null;
         }
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.MIST;
     }
 
     public static class Adapter extends RecyclerView.Adapter<Adapter.CustomViewHolder> {

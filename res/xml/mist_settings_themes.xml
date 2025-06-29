@@ -14,26 +14,24 @@
         android:layout="@layout/mist_first_header_pref"
         android:title="@string/themes_general_category">
 
-        <SwitchPreferenceCompat
+<!--        <SwitchPreferenceCompat
             android:key="expressive_design"
             android:title="@string/expressive_design_title"
             android:summary="@string/expressive_design_summary"
             android:defaultValue="false"
             android:persistent="true" />
 
-        <!-- Wallpaper Settings -->
         <Preference
             android:key="wallpaper_settings"
             android:title="@string/wallpaper_settings_title"
             android:summary="@string/wallpaper_settings_summary"
             android:fragment="org.mist.settings.fragments.themes.Wallpaper" />
 
-        <!-- Brightness slider -->
         <Preference
             android:key="android.theme.customization.brightness_slider"
             android:title="@string/themes_brightness_slider_title"
             android:summary="@string/themes_brightness_slider_summary"
-            android:fragment="org.mist.settings.fragments.themes.BrightnessSlider" />
+            android:fragment="org.mist.settings.fragments.themes.BrightnessSlider" /> -->
 
         <!-- Notification styles -->      
         <org.mist.settings.preferences.SystemSettingListPreference
@@ -63,13 +61,13 @@
             android:defaultValue="0" />
 
         <!-- Volume Styles -->
-        <org.mist.settings.preferences.SystemSettingListPreference
+<!--        <org.mist.settings.preferences.SystemSettingListPreference
             android:key="custom_volume_styles"
             android:title="@string/volume_style_title"
             android:entries="@array/volume_styles_entries"
             android:entryValues="@array/volume_styles_values"
             android:summary="%s"
-            android:defaultValue="0" />
+            android:defaultValue="0" /> -->
     </PreferenceCategory>
 	
     <PreferenceCategory
@@ -165,14 +163,6 @@
             android:summary="@string/themes_navigation_bar_icons_summary"
             android:fragment="org.mist.settings.fragments.themes.NavigationBarIcons"/>
 
-        <!-- Udfps icon -->
-        <Preference
-            android:key="udfps_icon"
-            android:title="@string/themes_udfps_icon_title"
-            android:summary="@string/themes_udfps_icon_summary"
-            android:fragment="org.mist.settings.fragments.themes.UdfpsIcons" />
-    </PreferenceCategory>
-
     <PreferenceCategory
         android:key="themes_animations_category"
         android:layout="@layout/mist_first_header_pref"
@@ -200,11 +190,5 @@
             android:entryValues="@array/themes_screen_off_animation_values"
             android:defaultValue="0" />
 
-        <!-- Udfps animation -->
-        <Preference
-            android:key="udfps_animation"
-            android:title="@string/themes_udfps_animation_title"
-            android:summary="@string/themes_udfps_animation_summary"
-            android:fragment="org.mist.settings.fragments.themes.UdfpsAnimations" />
     </PreferenceCategory>
 </PreferenceScreen>

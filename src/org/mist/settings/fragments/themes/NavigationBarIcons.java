@@ -40,6 +40,7 @@ import android.view.ViewGroup.LayoutParams;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,11 +48,9 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceScreen;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
-import com.android.settings.SettingsPreferenceFragment;
 
 import com.bumptech.glide.Glide;
 
@@ -68,7 +67,7 @@ import java.util.Arrays;
 import org.json.JSONObject;
 import org.json.JSONException;
 
-public class NavigationBarIcons extends SettingsPreferenceFragment {
+public class NavigationBarIcons extends Fragment {
 
     private RecyclerView mRecyclerView;
     private ThemeUtils mThemeUtils;
@@ -104,11 +103,6 @@ public class NavigationBarIcons extends SettingsPreferenceFragment {
         mRecyclerView.setAdapter(mAdapter);
 
         return view;
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.MIST;
     }
 
     @Override
