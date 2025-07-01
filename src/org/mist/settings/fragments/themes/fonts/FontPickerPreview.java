@@ -39,13 +39,15 @@ import android.util.TypedValue;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 import java.util.List;
 
-public class FontPickerPreview extends Fragment {
+public class FontPickerPreview extends SettingsPreferenceFragment {
 
     private TextView fontSelector;
     private TextView previewText;
@@ -155,4 +157,8 @@ public class FontPickerPreview extends Fragment {
         }
     }
 
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.VIEW_UNKNOWN;
+    }
 }

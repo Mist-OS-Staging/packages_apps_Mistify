@@ -162,6 +162,7 @@
             android:title="@string/themes_navigation_bar_icons_title"
             android:summary="@string/themes_navigation_bar_icons_summary"
             android:fragment="org.mist.settings.fragments.themes.NavigationBarIcons"/>
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="themes_animations_category"

@@ -1,4 +1,4 @@
-package org.mist.settings.preferences;Add commentMore actions
+package org.mist.settings.preferences;
 
 import android.content.Context;
 import android.content.Intent;

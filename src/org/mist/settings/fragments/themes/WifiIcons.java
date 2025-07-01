@@ -34,13 +34,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.mist.ThemeUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public class WifiIcons extends Fragment {
+public class WifiIcons extends SettingsPreferenceFragment {
 
     private static final String TAG = "WifiIcons";
 
@@ -75,6 +77,11 @@ public class WifiIcons extends Fragment {
             mRecyclerView.setAdapter(null);
             mRecyclerView = null;
         }
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.MIST;
     }
 
     public static class Adapter extends RecyclerView.Adapter<Adapter.CustomViewHolder> {
