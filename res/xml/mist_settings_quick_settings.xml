@@ -86,7 +86,7 @@
             android:key="show_media_squiggle_animation"
             android:title="@string/show_squiggle_animation_title"
             android:summary="@string/show_squiggle_animation_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
 <!--        <org.mist.settings.preferences.SystemSettingListPreference
             android:key="qs_header_clock_style"
@@ -204,7 +204,6 @@
         <!-- Hide on secure lock screen -->
         <org.mist.settings.preferences.SecureSettingListPreference
             android:key="enable_lockscreen_quick_settings"
-            android:key="secure_lockscreen_qs_disabled"
             android:title="@string/quick_settings_secure_lock_screen_title"
             android:entries="@array/quick_settings_secure_lock_screen_entries"
             android:entryValues="@array/quick_settings_secure_lock_screen_values"
