@@ -29,7 +29,7 @@
     <Preference
             android:key="monet_engine"
             android:title="@string/themes_monet_title"
-            android:icon="@drawable/ic_monet"
+            android:icon="@drawable/ic_homepage_monet"
             android:summary="@string/themes_monet_summary"
             android:fragment="org.mist.settings.fragments.themes.MonetSettings" />
 
@@ -44,7 +44,7 @@
         android:key="themes"
         android:title="@string/themes_title"
         android:summary="@string/themes_summary"
-        android:icon="@drawable/ic_themes"
+        android:icon="@drawable/ic_homepage_themes"
         android:fragment="org.mist.settings.fragments.themes.Themes" />
 
     </PreferenceCategory>
@@ -56,7 +56,7 @@
         android:key="lock_screen"
         android:title="@string/lock_screen_title"
         android:summary="@string/lock_screen_summary"
-        android:icon="@drawable/ic_lock_screen"
+        android:icon="@drawable/ic_homepage_lockscreen"
         android:fragment="org.mist.settings.fragments.lockscreen.LockScreen" />
 
     </PreferenceCategory>
@@ -68,7 +68,7 @@
         android:key="status_bar"
         android:title="@string/status_bar_title"
         android:summary="@string/status_bar_summary"
-        android:icon="@drawable/ic_status_bar"
+        android:icon="@drawable/ic_homepage_status"
         android:fragment="org.mist.settings.fragments.statusbar.StatusBar" />
 
     </PreferenceCategory>
@@ -80,7 +80,7 @@
         android:key="quick_settings"
         android:title="@string/quick_settings_title"
         android:summary="@string/quick_settings_summary"
-        android:icon="@drawable/ic_quick_settings"
+        android:icon="@drawable/ic_homepage_quick"
         android:fragment="org.mist.settings.fragments.quicksettings.QuickSettings" />
 
     </PreferenceCategory>
@@ -92,7 +92,7 @@
         android:key="notifications"
         android:title="@string/notifications_title"
         android:summary="@string/notifications_summary"
-        android:icon="@drawable/ic_notifications"
+        android:icon="@drawable/ic_homepage_noti"
         android:fragment="org.mist.settings.fragments.notifications.Notifications" />
 
     </PreferenceCategory>
@@ -106,7 +106,7 @@
         android:key="power_menu"
         android:title="@string/power_menu_title"
         android:summary="@string/power_menu_summary"
-        android:icon="@drawable/ic_power_menu"
+        android:icon="@drawable/ic_homepage_power"
         android:fragment="org.mist.settings.fragments.powermenu.PowerMenu" />
 
     </PreferenceCategory>
@@ -120,7 +120,7 @@
         android:key="miscellaneous"
         android:title="@string/miscellaneous_title"
         android:summary="@string/miscellaneous_summary"
-        android:icon="@drawable/ic_miscellaneous"
+        android:icon="@drawable/ic_homepage_misc"
         android:fragment="org.mist.settings.fragments.miscellaneous.Miscellaneous" />
     </PreferenceCategory>
 
@@ -133,7 +133,7 @@
             android:key="spoofing"
             android:title="@string/spoofing_title"
             android:summary="@string/spoofing_summary"
-            android:icon="@drawable/ic_spoofing"
+            android:icon="@drawable/ic_homepage_spoof"
             android:fragment="org.mist.settings.fragments.miscellaneous.Spoofing" />
     </PreferenceCategory>
 
