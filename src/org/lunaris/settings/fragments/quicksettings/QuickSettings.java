@@ -58,7 +58,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_BLUETOOTH_SHOW_DIALOG = "qs_bt_show_dialog";
     private static final String PREF_NOTIFICATION_ROW_TRANSPARENCY = "notification_row_transparency";
     private static final String KEY_QS_REFACTOR_DISABLED = "qs_refactor_disabled";
-    private static final String PREF_DUAL_TONE_SHADE = "dual_tone_shade_enabled";
     private static final String PREF_SHADE_BLUR_RADIUS = "shade_blur_radius";
     private static final String KEY_QS_COMPACT_PLAYER  = "qs_compact_media_player_mode";
 
@@ -66,7 +65,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mMiscellaneousCategory;
     private SwitchPreferenceCompat mNotificationRowTransparencyPref;
     private SecureSettingSwitchPreference mQsRefactorDisabled;
-    private SwitchPreferenceCompat mDualToneShadePref;
     private CustomSeekBarPreference mShadeBlurRadiusPref;
     private Preference mQsCompactPlayer;
 
@@ -90,15 +88,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsCompactPlayer = (Preference) findPreference(KEY_QS_COMPACT_PLAYER);
         mQsCompactPlayer.setOnPreferenceChangeListener(this);
 
-        mDualToneShadePref = findPreference(PREF_DUAL_TONE_SHADE);
-
         mShadeBlurRadiusPref = findPreference(PREF_SHADE_BLUR_RADIUS);
         
         updatePreferences();
-
-        if (mDualToneShadePref != null) {
-            mDualToneShadePref.setOnPreferenceChangeListener(this);
-        }
 
         if (!DeviceUtils.deviceSupportsBluetooth(mContext)) {
             prefScreen.removePreference(mMiscellaneousCategory);
@@ -130,9 +122,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 PREF_SHADE_BLUR_RADIUS, 17, UserHandle.USER_CURRENT);
         mShadeBlurRadiusPref.setValue(currentBlur);
 
-        boolean dualToneEnabled = Settings.System.getIntForUser(resolver,
-                PREF_DUAL_TONE_SHADE, 0, UserHandle.USER_CURRENT) == 1;
-        mDualToneShadePref.setChecked(dualToneEnabled);
     }
 
     @Override
@@ -146,11 +135,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else if (preference == mQsRefactorDisabled) {
             SystemRestartUtils.restartSystemUI(getContext());
             return true;
-        } else if (preference == mDualToneShadePref) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver, PREF_DUAL_TONE_SHADE,
-                    value ? 1 : 0, UserHandle.USER_CURRENT);
-           return true;
         } else if (preference == mShadeBlurRadiusPref) {
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver, PREF_SHADE_BLUR_RADIUS,
