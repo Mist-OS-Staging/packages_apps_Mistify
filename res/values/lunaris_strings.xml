@@ -1055,6 +1055,8 @@
     <string name="qs_brightness_slider_position_title">Position</string>
     <string name="qs_brightness_slider_position_top">Top</string>
     <string name="qs_brightness_slider_position_bottom">Bottom</string>
+    <string name="status_bar_brightness_slider_title">Brightness slider for compact qs</string>
+    <string name="status_bar_brightness_slider_summary">Adjust brightness from the Quick Settings</string>
 
     <!-- Brightness slider haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
