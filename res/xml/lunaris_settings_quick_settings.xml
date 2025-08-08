@@ -69,12 +69,6 @@
     <PreferenceCategory
         android:title="@string/qs_shade_category_title">
 
-        <org.lunaris.settings.preferences.SecureSettingSwitchPreference
-            android:key="qs_refactor_disabled"
-            android:title="@string/qs_refactor_title"
-            android:summary="@string/qs_refactor_summary"
-            android:defaultValue="false" />
-
         <SwitchPreferenceCompat
             android:key="notification_row_transparency"
             android:title="@string/notification_row_transparency_title"
@@ -106,7 +100,13 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-         android:title="@string/qs_brightness_slider_category">
+        android:title="@string/qs_refactor_category">
+
+        <org.lunaris.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_refactor_disabled"
+            android:title="@string/qs_refactor_title"
+            android:summary="@string/qs_refactor_summary"
+            android:defaultValue="false" />
 
         <!-- Brightness slider -->
         <lineageos.preference.LineageSecureSettingListPreference
