@@ -118,6 +118,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES,
                 UserHandle.USER_CURRENT);
 
+        if (mNotificationRowTransparencyPref != null) {
+            boolean enabled = Settings.System.getIntForUser(
+                    resolver,
+                    PREF_NOTIFICATION_ROW_TRANSPARENCY,
+                    0,
+                    UserHandle.USER_CURRENT) == 1;
+            mNotificationRowTransparencyPref.setChecked(enabled);
+        }
+
         int currentBlur = Settings.System.getIntForUser(resolver,
                 PREF_SHADE_BLUR_RADIUS, 17, UserHandle.USER_CURRENT);
         mShadeBlurRadiusPref.setValue(currentBlur);
