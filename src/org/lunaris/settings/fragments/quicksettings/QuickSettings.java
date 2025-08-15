@@ -38,7 +38,6 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
-import org.lunaris.settings.preferences.CustomSeekBarPreference;
 import org.lunaris.settings.preferences.SecureSettingSwitchPreference;
 
 import org.lunaris.settings.utils.DeviceUtils;
@@ -58,14 +57,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_BLUETOOTH_SHOW_DIALOG = "qs_bt_show_dialog";
     private static final String PREF_NOTIFICATION_ROW_TRANSPARENCY = "notification_row_transparency";
     private static final String KEY_QS_REFACTOR_DISABLED = "qs_refactor_disabled";
-    private static final String PREF_SHADE_BLUR_RADIUS = "shade_blur_radius";
     private static final String KEY_QS_COMPACT_PLAYER  = "qs_compact_media_player_mode";
 
     private PreferenceCategory mInterfaceCategory;
     private PreferenceCategory mMiscellaneousCategory;
     private SwitchPreferenceCompat mNotificationRowTransparencyPref;
     private SecureSettingSwitchPreference mQsRefactorDisabled;
-    private CustomSeekBarPreference mShadeBlurRadiusPref;
     private Preference mQsCompactPlayer;
 
     @Override
@@ -87,8 +84,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mQsCompactPlayer = (Preference) findPreference(KEY_QS_COMPACT_PLAYER);
         mQsCompactPlayer.setOnPreferenceChangeListener(this);
-
-        mShadeBlurRadiusPref = findPreference(PREF_SHADE_BLUR_RADIUS);
         
         updatePreferences();
 
@@ -96,13 +91,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mMiscellaneousCategory);
         }
 
-        if (mNotificationRowTransparencyPref != null) {
+        if (mNotificationRowTransparencyPref != null)
             mNotificationRowTransparencyPref.setOnPreferenceChangeListener(this);
-        }
-
-        if (mShadeBlurRadiusPref != null) {
-            mShadeBlurRadiusPref.setOnPreferenceChangeListener(this);
-        }
     }
 
     @Override
@@ -127,10 +117,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             mNotificationRowTransparencyPref.setChecked(enabled);
         }
 
-        int currentBlur = Settings.System.getIntForUser(resolver,
-                PREF_SHADE_BLUR_RADIUS, 17, UserHandle.USER_CURRENT);
-        mShadeBlurRadiusPref.setValue(currentBlur);
-
     }
 
     @Override
@@ -143,11 +129,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mQsRefactorDisabled) {
             SystemRestartUtils.restartSystemUI(getContext());
-            return true;
-        } else if (preference == mShadeBlurRadiusPref) {
-            int value = (Integer) newValue;
-            Settings.System.putIntForUser(resolver, PREF_SHADE_BLUR_RADIUS,
-                    value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQsCompactPlayer) {
             SystemUtils.showSystemUiRestartDialog(getActivity());
