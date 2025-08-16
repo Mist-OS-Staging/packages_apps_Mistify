@@ -18,19 +18,19 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/edge_light_title">
 
-    <org.lunaris.settings.preferences.SystemSettingSwitchPreference
+    <org.mist.settings.preferences.SystemSettingSwitchPreference
         android:key="edge_light_enabled"
         android:title="@string/enable"
         android:defaultValue="false" />
 
-    <org.lunaris.settings.preferences.SystemSettingSwitchPreference
+    <org.mist.settings.preferences.SystemSettingSwitchPreference
         android:key="edge_light_always_trigger_on_pulse"
         android:title="@string/edge_light_always_trigger_on_pulse_title"
         android:summary="@string/edge_light_always_trigger_on_pulse_summary"
         android:defaultValue="false"
         android:dependency="edge_light_enabled" />
 
-    <org.lunaris.settings.preferences.SystemSettingSwitchPreference
+    <org.mist.settings.preferences.SystemSettingSwitchPreference
         android:key="edge_light_repeat_animation"
         android:title="@string/edge_light_repeat_animation_title"
         android:summaryOn="@string/edge_light_repeat_animation_summary_on"
@@ -38,7 +38,7 @@
         android:defaultValue="false"
         android:dependency="edge_light_enabled" />
 
-    <org.lunaris.settings.preferences.SystemSettingListPreference
+    <org.mist.settings.preferences.SystemSettingListPreference
         android:key="edge_light_color_mode"
         android:title="@string/edge_light_color_mode_title"
         android:entries="@array/edge_light_color_mode_entries"
@@ -47,7 +47,7 @@
         android:defaultValue="0"
         android:dependency="edge_light_enabled" />
 
-    <org.lunaris.settings.preferences.SystemSettingListPreference
+    <org.mist.settings.preferences.SystemSettingListPreference
         android:key="edge_light_style"
         android:title="@string/edge_light_style_title"
         android:entries="@array/edge_light_style_entries"
@@ -56,7 +56,7 @@
         android:defaultValue="0"
         android:dependency="edge_light_enabled" />
 
-    <org.lunaris.settings.preferences.SystemSettingSeekBarPreference
+    <org.mist.settings.preferences.SystemSettingSeekBarPreference
         android:key="edge_light_width"
         android:title="@string/edge_light_stroke_width_title"
         android:summary="@string/edge_light_stroke_width_summary"
@@ -67,7 +67,7 @@
         android:max="20"
         android:min="1" />
 
-    <org.lunaris.settings.preferences.colorpicker.SystemSettingColorPickerPreference
+    <org.mist.settings.preferences.colorpicker.SystemSettingColorPickerPreference
         android:key="edge_light_custom_color"
         android:title="@string/custom_color"
         android:defaultValue="#FFFFFF"

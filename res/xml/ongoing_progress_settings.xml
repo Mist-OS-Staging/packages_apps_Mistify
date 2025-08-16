@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
  <!--
-      Copyright (C) 2024-2025 the Lunaris-OS Android Project
+      Copyright (C) 2024-2025 the MistOS
  
       Licensed under the Apache License, Version 2.0 (the "License");
       you may not use this file except in compliance with the License.
@@ -20,25 +20,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/ongoing_progress_settings_title" >
 
-    <org.lunaris.settings.preferences.SystemSettingSwitchPreference
+    <org.mist.settings.preferences.SystemSettingSwitchPreference
         android:key="ongoing_action_chip"
         android:title="@string/ongoing_action_chip_title"
         android:summary="@string/ongoing_action_chip_summary"
         android:defaultValue="false" />
 
-    <org.lunaris.settings.preferences.SystemSettingSwitchPreference
+    <org.mist.settings.preferences.SystemSettingSwitchPreference
         android:key="compact_progress_mode"
         android:title="@string/compact_progress_mode_title"
         android:summary="@string/compact_progress_mode_summary"
         android:defaultValue="false" />
 
-    <org.lunaris.settings.preferences.SystemSettingSwitchPreference
+    <org.mist.settings.preferences.SystemSettingSwitchPreference
         android:key="show_media_progress"
         android:title="@string/show_media_progress_title"
         android:summary="@string/show_media_progress_summary"
         android:defaultValue="false" />
 
-    <org.lunaris.settings.preferences.SystemSettingSeekBarPreference
+    <org.mist.settings.preferences.SystemSettingSeekBarPreference
         android:key="progress_bar_opacity"
         android:title="Progress Bar Opacity"
         android:summary="Adjust the opacity of the progress bar chip"
