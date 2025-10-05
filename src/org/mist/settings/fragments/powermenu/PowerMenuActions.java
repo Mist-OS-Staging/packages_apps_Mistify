@@ -160,9 +160,9 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             value = mScreenshotPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_SCREENSHOT);
 
-        } else if (preference == mOnTheGoPref) {
-            value = mOnTheGoPref.isChecked();
-            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_ONTHEGO);
+//        } else if (preference == mOnTheGoPref) {
+//            value = mOnTheGoPref.isChecked();
+//            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_ONTHEGO);
 
         } else if (preference == mAirplanePref) {
             value = mAirplanePref.isChecked();

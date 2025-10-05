@@ -334,8 +334,20 @@
     <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
     <string name="status_bar_clock_auto_hide_launcher_title">Auto hide on launcher</string>
     <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
-    <string name="status_bar_clock_chip_title">Background chip</string>
-    <string name="status_bar_clock_chip_summary">Display accented chip behind clock</string>
+    <string name="statusbar_clock_chip_title">Background chip</string>
+    <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
+    <string name="solid_accent">Solid color accent</string>
+    <string name="outline">Outline</string>
+    <string name="solid_accent_gradient">Solid color accent gradient</string>
+    <string name="solid_gradient">Solid Gradient side</string>
+    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
+    <string name="solid_gradient_void">Gradient Void</string>
+    <string name="solid_gradient_neumorph">Neumorph gradient</string>
+    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
+    <string name="solid_accent_transperent">Accent transperent</string>
+    <string name="solid_gradient_light">Gradient light</string>
+    <string name="solid_gradient_shape">Sharp gradient corner</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
     <string name="status_bar_am_pm_title">AM/PM style</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
     <string name="status_bar_am_pm_normal">Normal</string>
@@ -478,6 +490,7 @@
     <string name="quick_settings_tile_shape_circle">Circle</string>
     <string name="quick_settings_tile_shape_rounded_square">Rounded square</string>
     <string name="quick_settings_tile_shape_square">Square</string>
+    <string name="quick_settings_tile_haptic_summary">Provide haptic feedback on tapping QS tiles</string>
 
     <!-- Notifications -->
     <string name="notifications_heads_up_title">Heads up</string>
@@ -590,6 +603,8 @@
     <string name="spoofing_snap_summary">Spoof Snapchat as a Pixel XL to fix possible chat issues</string>
     <string name="gameprops_title">Unlock higher FPS in games</string>
     <string name="gameprops_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
+    <string name="spoofing_netflix_title">Netflix</string>
+    <string name="spoofing_netflix_summary">Spoof your device as different model for Netflix</string>
 
     <!-- Miscellaneous/Spoofing/Play Integrity fix JSON update -->
     <string name="toast_spoofing_success">Successfully downloaded pif.json. Spoofing as %1$s for Play Integrity.</string>
@@ -1000,4 +1015,12 @@
     <string name="island_notification_footer_text">
         The Island notification feature, inspired by iOS\'s Dynamic Island, transforms Android\'s heads-up notifications into quick-access and compact notification utility.\n\nIsland Quick Access Controls includes the following features:\n1. Tap island notification to quick answer phone calls.\n2. Long press island notification to reject phone calls.\n3. Long press island notification to expand the island notification preview.
     </string>
+
+    <!-- Statusbar logo color -->
+    <string name="default_string">Default</string>
+    <string name="logo_category">Logo Styles</string>
+    <string name="status_bar_logo_color_title">Color</string>
+    <string name="status_bar_logo_color_default">Default (White)</string>
+    <string name="status_bar_logo_color_accent">Accent</string>
+    <string name="status_bar_logo_color_custom">Custom</string>
 </resources>
