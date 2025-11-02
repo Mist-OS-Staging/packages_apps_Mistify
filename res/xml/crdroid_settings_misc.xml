@@ -92,6 +92,14 @@
         android:summary="@string/app_downgrade_summary"
         android:defaultValue="false"/>
 
+    <!-- Smart Pixels -->
+    <Preference
+        android:key="smart_pixels"
+        android:icon="@drawable/ic_smart_pixels"
+        android:title="@string/smart_pixels_title" 
+        android:summary="@string/smart_pixels_summary" 
+        android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
+
     <!-- Sidebar -->
     <Preference
         android:key="sidebar"
@@ -130,13 +138,5 @@
         android:title="@string/pocket_judge_title"
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
-
-    <!-- Rotation button -->
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="enable_rotation_button"
-        android:icon="@drawable/ic_rotation"
-        android:title="@string/floating_rotation_button_title"
-        android:summary="@string/floating_rotation_button_summary"
-        android:defaultValue="true" />
 
 </PreferenceScreen>

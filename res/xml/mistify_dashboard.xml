@@ -17,6 +17,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/crdroid_settings_title" >
+
+    <!-- Monet Theme Engine -->
+    <Preference
+        android:key="monet_engine"
+        android:icon="@drawable/ic_themes"
+        android:title="@string/monet_title"
+        android:summary="@string/monet_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
       
         <!-- UserInterface -->
         <Preference
@@ -67,6 +75,13 @@
 	        android:title="@string/button_title"
             android:summary="@string/bottom_summary"
             android:fragment="com.crdroid.settings.fragments.Buttons" />
+
+        <!-- PowerMenu -->
+        <Preference
+            android:icon="@drawable/ic_settings_powermenu"
+            android:title="@string/power_menu_title"
+            android:summary="@string/power_menu_summary"
+            android:fragment="com.crdroid.settings.fragments.buttons.PowerMenuActions" />
         
         <!-- Navigation -->
        <!-- <Preference

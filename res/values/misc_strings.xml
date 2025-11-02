@@ -33,4 +33,22 @@
     <string name="user_summary">Various User interface customization</string>
     <string name="about_summary">Know about this project</string>
 
+    <!--Category name-->
+    <string name="themes_icons_category">System Icons</string>
+    <string name="themes_animation_category">System Animation</string>
+    <string name="themes_ambient_category">Ambient Settings</string>
+    <string name="battery_misc_category">Battery Settings</string>
+    <string name="privacy_category_title">Privacy Settings</string>
+    <string name="spoofing_title">Component spoofing</string>
+    <string name="spoofing_summary">spoofing_summary</string>
+    <string name="power_menu_title">Power Menu</string>
+    <string name="power_menu_summary">Power Menu Actions</string>
+
+
+
+
+
+
+
+
 </resources>

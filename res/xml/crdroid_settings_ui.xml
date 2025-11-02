@@ -20,6 +20,60 @@
     android:title="@string/ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="themes_general_category"
+        android:layout="@layout/mist_first_header_pref"
+        android:title="@string/themes_icons_category">
+
+    <!-- Icon pack -->
+    <Preference
+        android:key="android.theme.customization.icon_pack"
+        android:title="@string/theme_customization_icon_pack_title"
+        android:summary="@string/theme_customization_icon_pack_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.StatusbarIcons"/>
+
+    <!-- Signal icon style -->
+    <Preference
+        android:key="android.theme.customization.signal_icon"
+        android:title="@string/theme_customization_signal_icon_title"
+        android:summary="@string/theme_customization_signal_icon_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.SignalIcons"/>
+
+    <!-- Wifi icon style -->
+    <Preference
+        android:key="android.theme.customization.wifi_icon"
+        android:title="@string/theme_customization_wifi_icon_title"
+        android:summary="@string/theme_customization_wifi_icon_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.WifiIcons"/>
+
+    <!-- Adaptive icon pack -->
+    <Preference
+        android:key="android.theme.customization.adaptive_icon_shape"
+        android:title="@string/theme_customization_icon_shape_title"
+        android:summary="@string/theme_customization_icon_shape_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.IconShapes"/>
+
+    <!-- Font style -->
+    <Preference
+        android:key="android.theme.customization.fonts"
+        android:title="@string/theme_customization_font_title"
+        android:summary="@string/theme_customization_font_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.FontsPicker"/>
+
+    <!-- Navbar Style -->
+    <Preference
+        android:key="android.theme.customization.navbar"
+        android:title="@string/theme_customization_navbar_title"
+        android:summary="@string/theme_customization_navbar_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.NavbarStyles"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="themes_general_category"
+        android:layout="@layout/mist_first_header_pref"
+        android:title="@string/themes_ambient_category">
+
     <!-- Ambient Display -->
     <Preference
         android:key="doze_fragment"
@@ -43,22 +97,6 @@
         android:title="@string/pulse_on_new_tracks_title"
         android:summary="@string/pulse_on_new_tracks_summary" />
 
-    <!-- Edge Light -->
-    <Preference
-        android:key="edge_light_settings"
-        android:icon="@drawable/ic_edge_light"
-        android:title="@string/edge_light_title"
-        android:summary="@string/edge_light_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.EdgeLightSettings" />
-
-    <!-- Charging animation -->
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="charging_animation"
-        android:icon="@drawable/ic_battery_charging"
-        android:title="@string/charging_animation_title"
-        android:summary="@string/charging_animation_summary"
-        android:defaultValue="true" />
-
     <!-- Display Cutout -->
     <Preference
         android:key="display_cutout_force_fullscreen_settings"
@@ -69,40 +107,6 @@
              android:targetPackage="com.android.settings"
              android:targetClass="com.crdroid.settings.fragments.ui.DisplayCutoutForceFullscreenActivity"/>
     </Preference>
-
-    <!-- Screen Off animation -->
-    <com.crdroid.settings.preferences.SystemSettingListPreference
-        android:key="screen_off_animation"
-        android:icon="@drawable/ic_television_classic"
-        android:title="@string/screen_off_animation_title"
-        android:dialogTitle="@string/screen_off_animation_title"
-        android:entries="@array/screen_off_animation_entries"
-        android:entryValues="@array/screen_off_animation_values"
-        android:defaultValue="0" />
-
-    <!-- Smart Pixels -->
-    <Preference
-        android:key="smart_pixels"
-        android:icon="@drawable/ic_smart_pixels"
-        android:title="@string/smart_pixels_title" 
-        android:summary="@string/smart_pixels_summary" 
-        android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
-
-    <!-- Monet Theme Engine -->
-    <Preference
-        android:key="monet_engine"
-        android:icon="@drawable/ic_themes"
-        android:title="@string/monet_title"
-        android:summary="@string/monet_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
-
-    <!-- Navbar Style -->
-    <Preference
-        android:key="android.theme.customization.navbar"
-        android:icon="@drawable/ic_navbar"
-        android:title="@string/theme_customization_navbar_title"
-        android:summary="@string/theme_customization_navbar_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.NavbarStyles"/>
 
     <!-- Notification Style
     <com.crdroid.settings.preferences.SystemSettingListPreference
@@ -124,44 +128,28 @@
         android:summary="%s"
         android:defaultValue="0" /> -->
 
-    <!-- Font style -->
-    <Preference
-        android:key="android.theme.customization.fonts"
-        android:icon="@drawable/ic_font"
-        android:title="@string/theme_customization_font_title"
-        android:summary="@string/theme_customization_font_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.FontsPicker"/>
+    <PreferenceCategory
+        android:key="themes_general_category"
+        android:layout="@layout/mist_first_header_pref"
+        android:title="@string/themes_animation_category">
 
-    <!-- Icon pack -->
-    <Preference
-        android:key="android.theme.customization.icon_pack"
-        android:icon="@drawable/ic_drawing"
-        android:title="@string/theme_customization_icon_pack_title"
-        android:summary="@string/theme_customization_icon_pack_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.StatusbarIcons"/>
+    <!-- Charging animation -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="charging_animation"
+        android:icon="@drawable/ic_battery_charging"
+        android:title="@string/charging_animation_title"
+        android:summary="@string/charging_animation_summary"
+        android:defaultValue="true" />
 
-    <!-- Signal icon style -->
-    <Preference
-        android:key="android.theme.customization.signal_icon"
-        android:icon="@drawable/ic_signal"
-        android:title="@string/theme_customization_signal_icon_title"
-        android:summary="@string/theme_customization_signal_icon_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.SignalIcons"/>
-
-    <!-- Wifi icon style -->
-    <Preference
-        android:key="android.theme.customization.wifi_icon"
-        android:icon="@drawable/ic_wifi"
-        android:title="@string/theme_customization_wifi_icon_title"
-        android:summary="@string/theme_customization_wifi_icon_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.WifiIcons"/>
-
-    <!-- Adaptive icon pack -->
-    <Preference
-        android:key="android.theme.customization.adaptive_icon_shape"
-        android:icon="@drawable/ic_shapes"
-        android:title="@string/theme_customization_icon_shape_title"
-        android:summary="@string/theme_customization_icon_shape_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.IconShapes"/>
+    <!-- Screen Off animation -->
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="screen_off_animation"
+        android:icon="@drawable/ic_television_classic"
+        android:title="@string/screen_off_animation_title"
+        android:dialogTitle="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:defaultValue="0" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
