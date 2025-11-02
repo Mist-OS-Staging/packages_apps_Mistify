@@ -66,6 +66,20 @@
         android:summary="@string/theme_customization_navbar_summary"
         android:fragment="com.crdroid.settings.fragments.ui.NavbarStyles"/>
 
+    <!-- Smart Pixels -->
+    <Preference
+        android:key="smart_pixels"
+        android:title="@string/smart_pixels_title" 
+        android:summary="@string/smart_pixels_summary" 
+        android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
+
+    <!-- Edge Light -->
+    <Preference
+        android:key="edge_light_settings"
+        android:title="@string/edge_light_title"
+        android:summary="@string/edge_light_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.EdgeLightSettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -75,7 +89,6 @@
     <!-- Ambient Display -->
     <Preference
         android:key="doze_fragment"
-        android:icon="@drawable/ic_ambient"
         android:title="@string/doze_display_title"
         android:summary="@string/doze_display_summary"
         android:fragment="com.crdroid.settings.fragments.ui.DozeSettings" />
@@ -83,7 +96,6 @@
     <!-- Ambient Wallpaper -->
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_always_on_wallpaper_enabled"
-        android:icon="@drawable/ic_screensaver"
         android:title="@string/doze_always_on_wallpaper_title"
         android:summary="@string/doze_always_on_wallpaper_summary"
         android:defaultValue="@*android:bool/config_dozeSupportsAodWallpaper" />
@@ -91,14 +103,12 @@
     <!-- Ambient Music Ticker -->
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pulse_on_new_tracks"
-        android:icon="@drawable/ic_music_note"
         android:title="@string/pulse_on_new_tracks_title"
         android:summary="@string/pulse_on_new_tracks_summary" />
 
     <!-- Display Cutout -->
     <Preference
         android:key="display_cutout_force_fullscreen_settings"
-        android:icon="@drawable/ic_fullscreen"
         android:title="@string/display_cutout_force_fullscreen_title"
         android:summary="@string/display_cutout_force_fullscreen_summary">
         <intent android:action="android.intent.action.MAIN"
@@ -109,7 +119,6 @@
     <!-- Notification Style
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="notification_style"
-        android:icon="@drawable/ic_message_text_outline"
         android:title="@string/notification_style_title"
         android:entries="@array/custom_style_entries"
         android:entryValues="@array/custom_style_values"
@@ -119,7 +128,6 @@
     <!-- Powermenu Style
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="powermenu_style"
-        android:icon="@drawable/ic_settings_powermenu"
         android:title="@string/powermenu_style_title"
         android:entries="@array/custom_style_entries"
         android:entryValues="@array/custom_style_values"
@@ -135,7 +143,6 @@
     <!-- Charging animation -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"
-        android:icon="@drawable/ic_battery_charging"
         android:title="@string/charging_animation_title"
         android:summary="@string/charging_animation_summary"
         android:defaultValue="true" />
@@ -143,7 +150,6 @@
     <!-- Screen Off animation -->
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="screen_off_animation"
-        android:icon="@drawable/ic_television_classic"
         android:title="@string/screen_off_animation_title"
         android:dialogTitle="@string/screen_off_animation_title"
         android:entries="@array/screen_off_animation_entries"

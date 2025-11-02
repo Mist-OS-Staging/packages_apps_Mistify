@@ -18,6 +18,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/crdroid_settings_title" >
 
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
+
        <!-- Monet Theme Engine -->
        <Preference
            android:key="monet_engine"
@@ -25,6 +28,11 @@
            android:title="@string/monet_title"
            android:summary="@string/monet_summary"
            android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
       
         <!-- UserInterface -->
         <Preference
@@ -33,12 +41,22 @@
             android:summary="@string/user_summary"
             android:fragment="com.crdroid.settings.fragments.UserInterface" />
 
+    </PreferenceCategory>
+
+      <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
+
         <!-- Lockscreen -->
         <Preference
             android:icon="@drawable/ic_homepage_lockscreen"
             android:title="@string/lockscreen_title"
             android:summary="@string/lockscreen_summary"
             android:fragment="com.crdroid.settings.fragments.LockScreen" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
 
         <!-- QuickSettings -->
         <Preference
@@ -47,12 +65,22 @@
             android:summary="@string/quick_summary"
             android:fragment="com.crdroid.settings.fragments.QuickSettings" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
+
         <!-- Statusbar -->   
         <Preference
             android:icon="@drawable/ic_homepage_status"
             android:title="@string/statusbar_title"
             android:summary="@string/status_summary"
-            android:fragment="com.crdroid.settings.fragments.StatusBar" />  
+            android:fragment="com.crdroid.settings.fragments.StatusBar" /> 
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
 
         <!-- Notifications -->
         <Preference
@@ -61,6 +89,11 @@
             android:summary="@string/notification_summary"
             android:fragment="com.crdroid.settings.fragments.Notifications" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
+
         <!-- Sound -->
          <Preference
             android:icon="@drawable/ic_homepage_sound"
@@ -68,6 +101,10 @@
             android:summary="@string/sound_summary"
             android:fragment="com.crdroid.settings.fragments.Sound" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
 
         <!-- Buttons -->
         <Preference
@@ -76,6 +113,11 @@
             android:summary="@string/bottom_summary"
             android:fragment="com.crdroid.settings.fragments.Buttons" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
+
         <!-- PowerMenu -->
         <Preference
             android:icon="@drawable/ic_homepage_power"
@@ -83,6 +125,11 @@
             android:summary="@string/power_menu_summary"
             android:fragment="com.crdroid.settings.fragments.buttons.PowerMenuActions" />
         
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
+
         <!-- Navigation -->
        <!-- <Preference
             android:icon="@drawable/ic_navbar"
@@ -91,11 +138,18 @@
             settings:layout="@layout/matrixx_dashboard_preference_middle"
             android:fragment="com.crdroid.settings.fragments.Navigation" /> -->
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:layout="@layout/settingslib_preference_category_no_title">
+
         <!-- Misc -->
         <Preference
             android:icon="@drawable/ic_homepage_misc"
             android:title="@string/misc_title"
             android:summary="@string/mice_summary"
             android:fragment="com.crdroid.settings.fragments.Miscellaneous" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

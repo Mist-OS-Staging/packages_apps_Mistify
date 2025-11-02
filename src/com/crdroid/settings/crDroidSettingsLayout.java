@@ -16,23 +16,83 @@
 
 package com.crdroid.settings;
 
-import android.os.Bundle;
-
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import androidx.fragment.app.Fragment;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceFragmentCompat;
+
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.R;
+import com.android.settings.Utils;
+import com.android.settings.core.SubSettingLauncher;
+import com.android.settingslib.core.instrumentation.Instrumentable;
 
-public class crDroidSettingsLayout extends SettingsPreferenceFragment {
+@SearchIndexable
+public class crDroidSettingsLayout extends DashboardFragment implements
+        PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+
+    private static final String TAG = "crDroidSettingsLayout";
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-             addPreferencesFromResource(R.xml.mistify_dashboard);
+    protected int getPreferenceScreenResId() {
+        return R.xml.mistify_dashboard;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
-     }
+        return MetricsEvent.CRDROID_SETTINGS;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
+    }
+
+    @Override
+    public Fragment getCallbackFragment() {
+        return this;
+    }
+
+    @Override
+    public boolean onPreferenceStartFragment(PreferenceFragmentCompat caller, Preference pref) {
+        new SubSettingLauncher(getActivity())
+                .setDestination(pref.getFragment())
+                .setArguments(pref.getExtras())
+                .setSourceMetricsCategory(caller instanceof Instrumentable
+                        ? ((Instrumentable) caller).getMetricsCategory()
+                        : Instrumentable.METRICS_CATEGORY_UNKNOWN)
+                .setTitleRes(-1)
+                .launch();
+        return true;
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        super.onCreatePreferences(savedInstanceState, rootKey);
+        final PreferenceScreen screen = getPreferenceScreen();
+        // Tint the homepage icons
+        final int tintColor = Utils.getHomepageIconColor(getContext());
+        final int count = screen.getPreferenceCount();
+        for (int i = 0; i < count; i++) {
+            final Preference preference = screen.getPreference(i);
+            if (preference == null) {
+                break;
+            }
+            final Drawable icon = preference.getIcon();
+            if (icon != null) {
+                icon.setTint(tintColor);
+            }
+        }
+    }
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.mistify_dashboard);
 }
