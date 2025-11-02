@@ -18,52 +18,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/crdroid_settings_title" >
 
-    <!-- Monet Theme Engine -->
-    <Preference
-        android:key="monet_engine"
-        android:icon="@drawable/ic_themes"
-        android:title="@string/monet_title"
-        android:summary="@string/monet_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
+       <!-- Monet Theme Engine -->
+       <Preference
+           android:key="monet_engine"
+           android:icon="@drawable/ic_homepage_monet"
+           android:title="@string/monet_title"
+           android:summary="@string/monet_summary"
+           android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
       
         <!-- UserInterface -->
         <Preference
-            android:icon="@drawable/ic_themes"
+            android:icon="@drawable/ic_homepage_themes"
             android:title="@string/ui_title"
             android:summary="@string/user_summary"
             android:fragment="com.crdroid.settings.fragments.UserInterface" />
 
         <!-- Lockscreen -->
         <Preference
-            android:icon="@drawable/ic_settings_lockscreens"
+            android:icon="@drawable/ic_homepage_lockscreen"
             android:title="@string/lockscreen_title"
             android:summary="@string/lockscreen_summary"
             android:fragment="com.crdroid.settings.fragments.LockScreen" />
 
         <!-- QuickSettings -->
         <Preference
-            android:icon="@drawable/ic_settings_quicksettings"
+            android:icon="@drawable/ic_homepage_quick"
 	        android:title="@string/quicksettings_title"
             android:summary="@string/quick_summary"
             android:fragment="com.crdroid.settings.fragments.QuickSettings" />
 
         <!-- Statusbar -->   
         <Preference
-            android:icon="@drawable/ic_settings_statusbar"
+            android:icon="@drawable/ic_homepage_status"
             android:title="@string/statusbar_title"
             android:summary="@string/status_summary"
             android:fragment="com.crdroid.settings.fragments.StatusBar" />  
 
         <!-- Notifications -->
         <Preference
-            android:icon="@drawable/ic_message_fast"
+            android:icon="@drawable/ic_homepage_noti"
             android:title="@string/notifications_title"
             android:summary="@string/notification_summary"
             android:fragment="com.crdroid.settings.fragments.Notifications" />
 
         <!-- Sound -->
          <Preference
-            android:icon="@drawable/ic_settings_sound"
+            android:icon="@drawable/ic_homepage_sound"
             android:title="@string/sound_title"
             android:summary="@string/sound_summary"
             android:fragment="com.crdroid.settings.fragments.Sound" />
@@ -71,14 +71,14 @@
 
         <!-- Buttons -->
         <Preference
-            android:icon="@drawable/ic_shapes"
+            android:icon="@drawable/ic_homepage_button"
 	        android:title="@string/button_title"
             android:summary="@string/bottom_summary"
             android:fragment="com.crdroid.settings.fragments.Buttons" />
 
         <!-- PowerMenu -->
         <Preference
-            android:icon="@drawable/ic_settings_powermenu"
+            android:icon="@drawable/ic_homepage_power"
             android:title="@string/power_menu_title"
             android:summary="@string/power_menu_summary"
             android:fragment="com.crdroid.settings.fragments.buttons.PowerMenuActions" />
@@ -93,7 +93,7 @@
 
         <!-- Misc -->
         <Preference
-            android:icon="@drawable/ic_settings_miscs"
+            android:icon="@drawable/ic_homepage_misc"
             android:title="@string/misc_title"
             android:summary="@string/mice_summary"
             android:fragment="com.crdroid.settings.fragments.Miscellaneous" />
