@@ -138,4 +138,27 @@
         android:title="@string/miscellaneous_block_wallpaper_dimming_title"
         android:summary="@string/miscellaneous_block_wallpaper_dimming_summary"
         android:defaultValue="false" />
+
+
+    <!-- USB configuration -->
+        <Preference
+            android:key="default_usb_configuration"
+            android:title="@string/usb_default_config_title"
+            android:summary="@string/usb_default_config_summary"
+            android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment" />
+
+        <!-- Hide developer status -->
+        <Preference
+            android:key="hide_developer_status_settings"
+            android:title="@string/hide_developer_status_title"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
+            settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+
+     <!-- Hide screen capture status -->
+     <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+            android:key="hide_screen_capture_status"
+            android:title="@string/hide_screen_capture_status_title"
+            android:summary="@string/hide_screen_capture_status_summary"
+            android:defaultValue="false" />
 </PreferenceScreen>
