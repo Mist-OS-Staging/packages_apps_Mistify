@@ -1224,6 +1224,8 @@
     <string name="app_downgrade_summary">This allows you to downgrade applications. Note that this may lead to crashes and data corruption.</string>
     <string name="miscellaneous_ignore_window_secure_title">Ignore window secure flags</string>
     <string name="miscellaneous_ignore_window_secure_summary">Remove restrictions on screenshots and screen recordings for all applications, potentially risking privacy leaks</string>
+    <string name="miscellaneous_unlimit_screenrecord_title">Unlimit screenrecord</string>
+    <string name="miscellaneous_unlimit_screenrecord_summary">Remove the 15GiB file size limit\nMay result in a larger than needed output file</string>
 
     <!-- Heads-up -->
     <string name="compact_heads_up_notifications_enabled_title">Compact heads-up</string>
