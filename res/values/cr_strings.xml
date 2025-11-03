@@ -1272,6 +1272,13 @@
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Layers</string>
 
+    <!-- Progress Bar Styles -->
+    <string name="progress_bar_style_title">Progress bar style</string>
+    <string name="progress_bar_style1">Blocky thumb</string>
+    <string name="progress_bar_style2">Minimal thumb</string>
+    <string name="progress_bar_style3">Outline thumb</string>
+    <string name="progress_bar_style4">Shishu</string>
+
     <!-- Keybox Data -->
     <string name="keybox_data_title">Keybox attestation override</string>
     <string name="keybox_data_summary">Load a custom keybox XML to override device key attestation</string>
