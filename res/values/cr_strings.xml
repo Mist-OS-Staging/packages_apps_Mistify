@@ -1257,11 +1257,6 @@
     <string name="show_ime_space_title">Show IME button space</string>
     <string name="show_ime_space_summary">Enable the input method quick switch feature to switch input methods or hide the on-screen keyboard from the feature bar at the bottom of the screen when typing</string>
 
-     <!-- SystemUI restart dialog -->
-     <string name="systemui_restart_title">SystemUI restart required</string>
-     <string name="systemui_restart_message">For changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
-     <string name="systemui_restart_yes">Yes</string>
-     <string name="systemui_restart_not_now">Not now</string>
      <string name="systemui_restart_process">Restarting SystemUI to apply changes...</string>
 
     <!-- Notification / Power Menu Styles -->
@@ -1422,7 +1417,7 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="crdroid_buildserversponsor_summary">We recommend their servers if interested in one</string>
 
     <!-- Ongoing progress bar chip in statusbar --> 
-    <string name="ongoing_progress_settings_title">Statusbar action chip</string>Add commentMore actions
+    <string name="ongoing_progress_settings_title">Statusbar action chip</string>
     <string name="ongoing_progress_settings_summary">Statusbar action chip options</string>
     <string name="ongoing_action_chip_title">Ongoing action chip</string>
     <string name="ongoing_action_chip_summary">Show progress indicator in status bar for ongoing actions like downloads</string>
@@ -1448,4 +1443,38 @@ A small donation helps keep this project alive and improving. You can dismiss th
     </string>
     <string name="compact_progress_mode_title">Compact Progress Indicator</string>
     <string name="compact_progress_mode_summary">Use a compact circular indicator for ongoing actions</string>
+
+    <!-- Power Menu Styles -->
+    <string name="powermenu_style1">Cyberpunk</string>
+    <string name="powermenu_style2">Duoline</string>
+    <string name="powermenu_style3">Fluid (Transparent)</string>
+    <string name="powermenu_style4">IOS</string>
+    <string name="powermenu_style5">Layers</string>
+
+    <!-- Notification Styles -->
+    <string name="notif_style_title">Notification style</string>
+    <string name="notif_style1">Cyberpunk</string>
+    <string name="notif_style2">Duoline</string>
+    <string name="notif_style3">Fluid (Transparent)</string>
+    <string name="notif_style4">IOS</string>
+    <string name="notif_style5">Layers</string>
+
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">USB configuration</string>
+    <string name="usb_default_config_summary">Choose the default behavior when connected to a device via USB</string>
+
+
+    <!-- SystemUI restart dialog -->
+    <string name="systemui_restart_title">SystemUI restart required</string>
+    <string name="systemui_restart_message">For changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
+    <string name="systemui_restart_yes">Yes</string>
+    <string name="systemui_restart_not_now">Not now</string>
+
+    <!-- Statusbar logo color -->
+    <string name="default_string">Default</string>
+    <string name="logo_category">Logo Styles</string>
+    <string name="status_bar_logo_color_title">Color</string>
+    <string name="status_bar_logo_color_default">Default (White)</string>
+    <string name="status_bar_logo_color_accent">Accent</string>
+    <string name="status_bar_logo_color_custom">Custom</string>
 </resources>
