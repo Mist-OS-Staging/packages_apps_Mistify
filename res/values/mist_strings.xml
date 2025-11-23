@@ -519,6 +519,8 @@
     <string name="notifications_heads_up_title">Heads up</string>
     <string name="notifications_heads_up_summary">Allow pop up notifications</string>
     <string name="notifications_interface_category">Interface</string>
+    <string name="split_notification_panel_title">Split notification panel</string>
+    <string name="split_notification_panel_summary">Separate notifications on left and quick settings on right like OneUI/OxygenOS</string>
     <string name="notifications_edge_light_title">Edge light</string>
     <string name="notifications_edge_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="notifications_kill_app_button_title">Kill app</string>

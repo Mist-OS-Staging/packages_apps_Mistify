@@ -47,9 +47,11 @@ public class Notifications extends SettingsPreferenceFragment implements
 
     private static final String KEY_ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String KEY_INTERFACE_CATEGORY = "notifications_interface_category";
+    private static final String KEY_SPLIT_NOTIFICATION_PANEL = "split_notification_panel";
 
     private PreferenceCategory mInterfaceCategory;
     private Preference mAlertSlider;
+    private SystemSettingSwitchPreference mSplitNotificationPanel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,10 +65,17 @@ public class Notifications extends SettingsPreferenceFragment implements
 
         mAlertSlider = (SystemSettingSwitchPreference) findPreference(KEY_ALERT_SLIDER_PREF);
         mInterfaceCategory = (PreferenceCategory) findPreference(KEY_INTERFACE_CATEGORY);
+        mSplitNotificationPanel = (SystemSettingSwitchPreference) findPreference(KEY_SPLIT_NOTIFICATION_PANEL);
+        
         boolean mAlertSliderAvailable = res.getBoolean(
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable) {
             mInterfaceCategory.removePreference(mAlertSlider);
+        }
+        
+        // Set up split notification panel preference
+        if (mSplitNotificationPanel != null) {
+            mSplitNotificationPanel.setOnPreferenceChangeListener(this);
         }
     }
 
@@ -74,7 +83,27 @@ public class Notifications extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final Context context = getContext();
         final ContentResolver resolver = context.getContentResolver();
+        
+        if (preference == mSplitNotificationPanel) {
+            boolean enabled = (Boolean) newValue;
+            // Show restart dialog when enabling/disabling split notification panel
+            showRestartDialog();
+            return true;
+        }
+        
         return false;
+    }
+    
+    private void showRestartDialog() {
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(getContext());
+        builder.setTitle("Restart Required");
+        builder.setMessage("System restart is required to apply split notification panel changes. Restart now?");
+        builder.setPositiveButton("Restart", (dialog, which) -> {
+            android.os.PowerManager pm = (android.os.PowerManager) getContext().getSystemService(Context.POWER_SERVICE);
+            pm.reboot("Split notification panel setting changed");
+        });
+        builder.setNegativeButton("Later", null);
+        builder.show();
     }
 
     @Override

@@ -77,6 +77,13 @@
         android:key="notifications_interface_category"
         android:title="@string/notifications_interface_category">
 
+        <!-- Split Notification Panel -->
+        <org.mist.settings.preferences.SystemSettingSwitchPreference
+            android:key="split_notification_panel"
+            android:title="@string/split_notification_panel_title"
+            android:summary="@string/split_notification_panel_summary"
+            android:defaultValue="false" />
+
         <!-- Alert Slider Notifications -->
         <org.mist.settings.preferences.SystemSettingSwitchPreference
             android:key="alert_slider_notifications"
