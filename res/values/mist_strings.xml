@@ -521,6 +521,11 @@
     <string name="notifications_interface_category">Interface</string>
     <string name="split_notification_panel_title">Split notification panel</string>
     <string name="split_notification_panel_summary">Separate notifications on left and quick settings on right like OneUI/OxygenOS</string>
+    <string name="split_notification_panel_summary_enabled">Split panel enabled - System restart required to apply changes</string>
+    <string name="restart_required_title">Restart Required</string>
+    <string name="split_notification_restart_message">System restart is required to apply split notification panel changes. Restart now?</string>
+    <string name="restart_now">Restart Now</string>
+    <string name="restart_later">Later</string>
     <string name="notifications_edge_light_title">Edge light</string>
     <string name="notifications_edge_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="notifications_kill_app_button_title">Kill app</string>
