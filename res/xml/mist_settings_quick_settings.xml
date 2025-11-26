@@ -119,6 +119,14 @@
             android:summary="@string/qs_refactor_summary"
             android:defaultValue="false" />
 
+        <!-- MIUI Control Center -->
+        <Preference
+            android:key="miui_control_center"
+            android:title="@string/miui_control_center_title"
+            android:summary="@string/miui_control_center_summary"
+            android:icon="@drawable/ic_homepage_quick"
+            android:fragment="org.lineageos.settings.mistify.MiuiControlCenterSettings" />
+
         <org.mist.settings.preferences.OverlaySwitchPreference
             android:key="com.android.system.qs.dualtone"
             android:title="@string/qs_dual_tone_title"
