@@ -1489,9 +1489,10 @@
     <string name="qs_calendar_type_islamic">Islamic (Hijri)</string>
     <string name="qs_calender_type_islamic">Islamic (Hijri)</string>
 
-    <string name="custom_lockscreen_title">Custom Lockscreen</string>
-    <string name="custom_lockscreen_summary">Enable or disable the Mistify custom lockscreen.</string>
-    <string name="custom_lockscreen_open">Open Lockscreen Editor</string>
-    <string name="custom_lockscreen_open_summary">Tap to configure the custom lockscreen UI.</string>
-    <string name="custom_lockscreen_not_installed">Custom LockScreen Clock Not Installed</string>
+    <!-- Custom Lockscreen -->
+    <string name="custom_lockscreen_category_title">Custom Lockscreen Clock</string>
+    <string name="custom_lockscreen_title">Enable custom clock</string>
+    <string name="custom_lockscreen_summary">Replace the default lockscreen clock with custom designs</string>
+    <string name="custom_lockscreen_editor_title">Configure clock style</string>
+    <string name="custom_lockscreen_editor_summary">Open editor to customize clock appearance and colors</string>
 </resources>

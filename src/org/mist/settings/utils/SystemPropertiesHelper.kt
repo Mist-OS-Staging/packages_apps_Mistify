@@ -8,10 +8,6 @@ import android.os.UserHandle
 
 object SystemPropertiesHelper {
 
-    // ===========================
-    // System Properties (Read-only - for SystemUI to read)
-    // ===========================
-    
     fun getBoolean(key: String, defaultValue: Boolean): Boolean {
         return SystemProperties.getBoolean(key, defaultValue)
     }
@@ -24,10 +20,6 @@ object SystemPropertiesHelper {
         return SystemProperties.get(key, def)
     }
 
-    // ===========================
-    // Settings.System (Read/Write - for user preferences)
-    // ===========================
-    
     fun getSystemBoolean(resolver: ContentResolver, key: String, defaultValue: Boolean): Boolean {
         return Settings.System.getIntForUser(
             resolver, 
@@ -81,10 +73,6 @@ object SystemPropertiesHelper {
         )
     }
 
-    // ===========================
-    // Settings.Secure (Read/Write - for secure settings)
-    // ===========================
-    
     fun getSecureBoolean(resolver: ContentResolver, key: String, defaultValue: Boolean): Boolean {
         return Secure.getIntForUser(
             resolver, 
