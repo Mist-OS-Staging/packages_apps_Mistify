@@ -1488,4 +1488,10 @@
     <string name="qs_calendar_type_saka">Saka (Indian)</string>
     <string name="qs_calendar_type_islamic">Islamic (Hijri)</string>
     <string name="qs_calender_type_islamic">Islamic (Hijri)</string>
+
+    <!-- LS Clock -->
+    <string name="custom_lockscreen_title">Custom Lockscreen</string>
+    <string name="custom_lockscreen_summary">Enable or disable the Mistify custom lockscreen.</string>
+    <string name="custom_lockscreen_open">Open Lockscreen Editor</string>
+    <string name="custom_lockscreen_open_summary">Tap to configure the custom lockscreen UI.</string>
 </resources>
