@@ -65,6 +65,13 @@
             android:title="@string/themes_navigation_bar_icons_title"
             android:summary="@string/themes_navigation_bar_icons_summary"
             android:fragment="org.mist.settings.fragments.themes.NavigationBarIcons"/>
+
+        <!-- Switch Styles -->
+        <Preference
+            android:key="android.theme.customization.switch_style"
+            android:title="@string/switch_styles_title"
+            android:summary="@string/switch_style_summary"
+            android:fragment="org.mist.settings.fragments.themes.SwitchStyles"/>
             
     </PreferenceCategory>
 
