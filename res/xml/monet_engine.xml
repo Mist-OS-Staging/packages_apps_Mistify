@@ -34,11 +34,29 @@
         android:entryValues="@array/monet_engine_color_source_values"
         android:defaultValue="0" />
 
+    <ListPreference
+        android:key="color_picker_style"
+        android:title="@string/monet_engine_picker_style_title"
+        android:summary="%s"
+        android:entries="@array/monet_engine_picker_style_entries"
+        android:entryValues="@array/monet_engine_picker_style_values"
+        android:defaultValue="classic" />
+
     <org.mist.settings.preferences.colorpicker.ColorPickerPreference
         android:key="accent_color"
         android:title="@string/monet_engine_custom_color_title"
         android:summary="@string/monet_engine_custom_color_summary"
         android:defaultValue="0xFF1b6ef3" />
+
+    <Preference
+        android:key="accent_color_hsv"
+        android:title="@string/monet_engine_custom_color_title"
+        android:summary="@string/monet_engine_custom_color_summary" />
+
+    <Preference
+        android:key="accent_color_wallpaper"
+        android:title="@string/monet_engine_custom_color_title"
+        android:summary="@string/monet_engine_wallpaper_picker_summary" />
 
     <SwitchPreferenceCompat
         android:key="accent_background"
@@ -51,6 +69,18 @@
         android:title="@string/monet_engine_color_override_title"
         android:dependency="accent_background"
         android:defaultValue="0xFF1b6ef3" />
+
+    <Preference
+        android:key="bg_color_hsv"
+        android:title="@string/monet_engine_color_override_title"
+        android:summary="@string/monet_engine_custom_color_summary"
+        android:dependency="accent_background" />
+
+    <Preference
+        android:key="bg_color_wallpaper"
+        android:title="@string/monet_engine_color_override_title"
+        android:summary="@string/monet_engine_wallpaper_picker_summary"
+        android:dependency="accent_background" />
 
     <org.mist.settings.preferences.CustomSeekBarPreference
         android:key="luminance_factor"

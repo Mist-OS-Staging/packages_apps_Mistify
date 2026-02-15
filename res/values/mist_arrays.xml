@@ -1338,4 +1338,16 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
+    <string-array name="monet_engine_picker_style_entries">
+        <item>@string/monet_picker_classic</item>
+        <item>@string/monet_picker_hsv</item>
+        <item>@string/monet_picker_wallpaper</item>
+    </string-array>
+
+    <string-array name="monet_engine_picker_style_values">
+        <item>classic</item>
+        <item>hsv</item>
+        <item>wallpaper</item>
+    </string-array>
 </resources>
