@@ -3,14 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.mist.settings.preferences.colorpicker;
+package org.lunaris.settings.preferences.colorpicker;
+
+import org.mist.settings.preferences.SecureSettingsStore;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.provider.Settings;
-
-import org.mist.settings.preferences.SecureSettingsStore;
 
 public class SecureSettingColorPickerPreference extends ColorPickerPreference {
 
