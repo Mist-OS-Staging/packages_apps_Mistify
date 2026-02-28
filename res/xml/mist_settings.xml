@@ -8,6 +8,19 @@
     <com.android.settingslib.widget.UntitledPreferenceCategory
         android:key="mistify_one_category">
 
+    <!-- Monet Theme Engine -->
+    <Preference
+        android:key="monet_engine"
+        android:title="@string/monet_title"
+        android:summary="@string/monet_summary"
+        android:icon="@drawable/ic_homepage_monet"
+        android:fragment="org.mist.settings.fragments.themes.MonetSettings" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_two_category">
+
     <!-- Themes -->
     <Preference
         android:key="themes"
@@ -15,7 +28,12 @@
         android:summary="@string/themes_summary"
         android:icon="@drawable/ic_mist_themes"
         android:fragment="org.mist.settings.fragments.themes.Themes" />
-    
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_three_category">
+
     <!-- Quick settings -->
     <Preference
         android:key="quick_settings"
@@ -24,6 +42,11 @@
         android:icon="@drawable/ic_mist_quick_settings"
         android:fragment="org.mist.settings.fragments.quicksettings.QuickSettings" />
 
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_four_category">
+
     <!-- Notifications -->
     <Preference
         android:key="notifications"
@@ -31,6 +54,11 @@
         android:summary="@string/notifications_summary"
         android:icon="@drawable/ic_homepage_notification"
         android:fragment="org.mist.settings.fragments.notifications.Notifications" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_five_category">
 
     <!-- Lock screen -->
     <Preference
@@ -43,7 +71,7 @@
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 
     <com.android.settingslib.widget.UntitledPreferenceCategory
-        android:key="mistify_two_category">
+        android:key="mistify_six_category">
 
         <!-- Status bar -->
         <Preference
@@ -53,13 +81,10 @@
             android:icon="@drawable/ic_mist_status_bar"
             android:fragment="org.mist.settings.fragments.statusbar.StatusBar" />
 
-        <!-- Miscellaneous -->
-        <Preference
-            android:key="miscellaneous"
-            android:title="@string/miscellaneous_title"
-            android:summary="@string/miscellaneous_summary"
-            android:icon="@drawable/ic_mist_miscellaneous"
-            android:fragment="org.mist.settings.fragments.miscellaneous.Miscellaneous" />
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_seven_category">
 
         <!-- Power menu -->
         <Preference
@@ -69,6 +94,11 @@
             android:icon="@drawable/ic_mist_power_menu"
             android:fragment="org.mist.settings.fragments.buttons.Buttons" />
 
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_eight_category">
+
         <!-- Sound -->
         <Preference
             android:key="sound"
@@ -76,7 +106,46 @@
             android:summary="@string/sound_summary"
             android:icon="@drawable/ic_homepage_sound"
             android:fragment="org.mist.settings.fragments.sound.Sound" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_nine_category">
+
+     <!-- Extras Settings -->
+    <Preference
+        android:key="extras"
+        android:title="@string/extras_title"
+        android:summary="@string/extras_summary"
+        android:icon="@drawable/ic_homepage_extras"
+        android:fragment="org.mist.settings.fragments.extras.Extras" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_ten_category">
             
+     <!-- Miscellaneous -->
+        <Preference
+            android:key="miscellaneous"
+            android:title="@string/miscellaneous_title"
+            android:summary="@string/miscellaneous_summary"
+            android:icon="@drawable/ic_mist_miscellaneous"
+            android:fragment="org.mist.settings.fragments.miscellaneous.Miscellaneous" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_eleven_category">
+
+    <!-- Spoofing -->
+       <Preference
+            android:key="spoofing"
+            android:title="@string/spoofing_title"
+            android:summary="@string/spoofing_summary"
+            android:icon="@drawable/ic_homepage_spoof"
+            android:fragment="org.mist.settings.fragments.miscellaneous.Spoofing" />
+
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 
 </PreferenceScreen>

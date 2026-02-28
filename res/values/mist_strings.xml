@@ -23,7 +23,7 @@
     <string name="about_device_name">Device</string>
 
     <!-- Categories -->
-    <string name="themes_title">User Interface</string>
+    <string name="themes_title">Themes</string>
     <string name="themes_summary">UI Changes and customization</string>
     <string name="lock_screen_title">Lock screen</string>
     <string name="lock_screen_summary">Lock screen interface</string>
@@ -37,8 +37,10 @@
     <string name="power_menu_summary">Power menu Settings</string>
     <string name="buttons_title">Buttons</string>
     <string name="buttons_summary">System button, volume buttons etc</string>
-    <string name="miscellaneous_title">System</string>
+    <string name="miscellaneous_title">Miscellaneous</string>
     <string name="miscellaneous_summary">Some extra system settings</string>
+    <string name="ambient_title">Ambient Display</string>
+    <string name="lockscreen_button_category">Lockscreen Button</string>
     <string name="quick_settings_media_category">QS media category</string>
 
     <!-- Themes -->
@@ -147,6 +149,9 @@
     <string name="custom_color">Custom color</string>
     <string name="restart_systemui">Restart SystemUI for change to take effect!</string>
     <string name="default_value">Default</string>
+
+    <!-- Extras Settings -->
+    <string name="extras_summary">Some extra settings</string>
 
     <!-- Ongoing action chip -->
     <string name="ongoing_progress_settings_title">Ongoing Progress chip</string>
@@ -978,7 +983,7 @@
     <string name="spoofing_pixel_props_summary">Spoof a select group of Google apps to the latest Pixel device</string>
 
     <!-- Miscellaneous/Spoofing/Play Integrity fix JSON update -->
-    <string name="spoofing_title">Spoofing Settings</string>
+    <string name="spoofing_title">Spoofing</string>
     <string name="gms_spoof_title">Play Integrity fix</string>
     <string name="spoofing_system_wide_category">System-Wide</string>
     <string name="gms_spoof_summary">Spoof your device to pass Google Play Attestation</string>
@@ -1213,6 +1218,7 @@
     <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
     <string name="status_bar_logo_position_title">Logo position</string>
     <string name="status_bar_logo_style_title">Logo style</string>
+    <string name="status_bar_logo_style_mist">MistOS</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>
