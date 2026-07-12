@@ -74,24 +74,7 @@ public class Themes extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final Context context = getContext();
         final ContentResolver resolver = context.getContentResolver();
-        int value = 0;
-
-        if (preference == mVolumeDialogType) {
-            SystemUtils.showSystemUiRestartDialog(getActivity());
-
-            int val = Integer.parseInt((String) newValue);
-
-        return true;
-    }
         return false;
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference != null && preference.getKey() != null) {
-            VibrationUtils.triggerVibration(getContext(), 3);
-        }
-        return super.onPreferenceTreeClick(preference);
     }
 
     @Override
@@ -101,11 +84,5 @@ public class Themes extends SettingsPreferenceFragment implements
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.mist_settings_themes) {
-
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    List<String> keys = super.getNonIndexableKeys(context);
-
-                }
             };
 }

@@ -17,6 +17,9 @@
         android:fragment="org.mist.settings.fragments.themes.Themes" />
 
     </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_eleven_category">
     
     <!-- Spoofing -->
        <Preference

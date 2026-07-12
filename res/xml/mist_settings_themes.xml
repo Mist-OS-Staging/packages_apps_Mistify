@@ -11,11 +11,10 @@
         android:title="@string/ui_title">
 
         <!-- Font style -->
-        <Preference
-            android:key="font_settings"
-            android:title="@string/font_settings_title"
-            android:summary="@string/font_settings_summary"
-            android:fragment="org.mist.settings.fragments.themes.fonts.FontSettingsFragment"/>
+        <org.mist.settings.preferences.FontsPickerPreference
+            android:key="system_font"
+            android:title="@string/font_styles_title"
+            android:summary="@string/font_styles_summary" />
 
 
         </PreferenceCategory>
