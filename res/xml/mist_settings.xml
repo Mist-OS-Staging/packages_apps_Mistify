@@ -5,10 +5,27 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/mist_dashboard_title">
 
-    <com.android.settingslib.widget.LayoutPreference
-        android:key="mist_card_dashboard"
-        android:layout="@layout/mist_dashboard"
-        android:selectable="false"
-        android:enabled="true"/>
+    <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:key="mistify_two_category">
+
+    <!-- Themes -->
+    <Preference
+        android:key="themes"
+        android:title="@string/themes_title"
+        android:summary="@string/themes_summary"
+        android:icon="@drawable/ic_mist_themes"
+        android:fragment="org.mist.settings.fragments.themes.Themes" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+    
+    <!-- Spoofing -->
+       <Preference
+            android:key="spoofing"
+            android:title="@string/spoofing_title"
+            android:summary="@string/spoofing_summary"
+            android:icon="@drawable/ic_homepage_spoof"
+            android:fragment="org.mist.settings.fragments.miscellaneous.Spoofing" />
+
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
 
 </PreferenceScreen>
