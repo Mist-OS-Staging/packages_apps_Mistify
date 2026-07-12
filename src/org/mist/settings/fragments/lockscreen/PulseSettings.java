@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2025 crDroid Android Project
+ * Copyright (C) 2016-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,24 +26,25 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreferenceCompat;
-import org.mist.settings.utils.DeviceUtils;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
-import com.android.internal.util.mist.VibrationUtils;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
 import org.mist.settings.preferences.SecureSettingListPreference;
 import org.mist.settings.preferences.colorpicker.SecureSettingColorPickerPreference;
+import org.mist.settings.utils.DeviceUtils;
 
+@SearchIndexable
 public class PulseSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_PULSE_BASS_HAPTICS = "pulse_bass_haptics";
     private static final String KEY_PULSE_RENDERER = "pulse_renderer";
     private static final String KEY_PULSE_COLOR = "pulse_color";
     private static final String KEY_PULSE_CUSTOM_COLOR = "pulse_custom_color";
-    private static final String KEY_PULSE_BASS_HAPTICS = "pulse_bass_haptics";
 
     private SecureSettingListPreference mPulseRenderer;
     private SecureSettingListPreference mPulseColor;
@@ -95,9 +96,10 @@ public class PulseSettings extends SettingsPreferenceFragment implements
 
     private void updatePreferenceVisibility(String rendererValue, String colorValue) {
         if (mPulseColor != null && mPulseCustomColor != null) {
+            boolean isMatrix = "matrix".equals(rendererValue);
             boolean isCustomColor = "custom".equals(colorValue);
-            mPulseColor.setVisible(true);
-            mPulseCustomColor.setVisible(isCustomColor);
+            mPulseColor.setVisible(!isMatrix);
+            mPulseCustomColor.setVisible(!isMatrix && isCustomColor);
         }
     }
 
@@ -120,11 +122,6 @@ public class PulseSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.MIST;
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference != null && preference.getKey() != null) {
-            VibrationUtils.triggerVibration(getContext(), 3);
-        }
-        return super.onPreferenceTreeClick(preference);
-    }
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.pulse_settings);
 }

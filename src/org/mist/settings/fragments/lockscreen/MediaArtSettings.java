@@ -33,9 +33,12 @@ import androidx.preference.SwitchPreferenceCompat;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.android.internal.util.mist.VibrationUtils;
 
+@SearchIndexable
 public class MediaArtSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -64,13 +67,13 @@ public class MediaArtSettings extends SettingsPreferenceFragment implements
 
         mMediaArtFilter = (ListPreference) findPreference(KEY_MEDIA_ART_FILTER);
         mPixelSize = findPreference(KEY_PIXEL_SIZE);
-        
+
         if (mMediaArtFilter != null) {
             mMediaArtFilter.setOnPreferenceChangeListener(this);
         }
-        
+
         updatePixelSizeVisibility();
-        
+
         if (resolver != null) {
             resolver.registerContentObserver(
                 Settings.System.getUriFor(Settings.System.LS_MEDIA_ART_FILTER),
@@ -98,10 +101,10 @@ public class MediaArtSettings extends SettingsPreferenceFragment implements
 
     private void updatePixelSizeVisibility() {
         if (mPixelSize == null) return;
-        
+
         Context context = getContext();
         if (context == null) return;
-        
+
         final ContentResolver resolver = context.getContentResolver();
         int currentFilter = Settings.System.getIntForUser(
             resolver,
@@ -109,7 +112,7 @@ public class MediaArtSettings extends SettingsPreferenceFragment implements
             0,
             UserHandle.USER_CURRENT
         );
-        
+
         mPixelSize.setVisible(currentFilter == FILTER_PIXELATION);
     }
 
@@ -137,4 +140,7 @@ public class MediaArtSettings extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.MIST;
     }
+
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.media_art_settings);
 }
