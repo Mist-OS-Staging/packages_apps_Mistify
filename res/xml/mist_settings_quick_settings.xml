@@ -236,5 +236,16 @@
             android:summary="@string/quick_settings_require_unlock_summary"
             android:defaultValue="true" />
     </PreferenceCategory>    
-    
+
+    <PreferenceCategory
+        android:key="qs_gestures_category"
+        android:title="@string/qs_gestures_category_title">
+
+        <org.mist.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_swipe_between_panels"
+            android:title="@string/qs_swipe_between_panels_title"
+            android:summary="@string/qs_swipe_between_panels_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>    
 </PreferenceScreen>
