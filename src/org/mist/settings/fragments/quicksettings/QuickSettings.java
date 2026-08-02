@@ -61,6 +61,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 //    private static final String KEY_SHOW_RINGER_MODE = "qs_show_ringer_mode";
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
 //    private static final String KEY_SINGLE_QS_TONE_ENABLED = "single_qs_tone_enabled";
+    private static final String KEY_QS_SWIPE_BETWEEN_PANELS = "qs_swipe_between_panels";
 
     private ListPreference mBrightnessSliderPosition;
 //    private ListPreference mQsPanelStyle;
@@ -74,6 +75,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 //    private SwitchPreferenceCompat mQsTileHaptic;
 //    private SwitchPreferenceCompat mQsTileLabelHide;
     private SwitchPreferenceCompat mShowAutoBrightness;
+    private SwitchPreferenceCompat mQsSwipeBetweenPanels;
 //    private SwitchPreferenceCompat mShowRingerMode;
 //    private SystemSettingSwitchPreference mCompactMediaPlayer;
 //    private SystemSettingSwitchPreference mQsWidgetIosMusic;
@@ -120,6 +122,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else {
             brightnessCategory.removePreference(mShowAutoBrightness);
         }
+
+        mQsSwipeBetweenPanels = findPreference(KEY_QS_SWIPE_BETWEEN_PANELS);
+        mQsSwipeBetweenPanels.setOnPreferenceChangeListener(this);
 
 //        mShowRingerMode = findPreference(KEY_SHOW_RINGER_MODE);
 //        mShowRingerMode.setEnabled(showSlider);
@@ -189,11 +194,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 //            mQsShowMediaPlayer.setVisible(!enabled);
 //            SystemUtils.showSystemUiRestartDialog(getActivity());
 //            return true;
-        } else if (preference == mBrightnessSliderHaptic) {
+        } else if (preference == mBrightnessSliderHaptic
 //                || preference == mCompactMediaPlayer
 //                || preference == mQsShowMediaPlayer
 //                || preference == mSingleQsToneEnabled
-//                || preference == mQsTileAlternateColor) {
+//                || preference == mQsTileAlternateColor
+                || preference == mQsSwipeBetweenPanels) {
             SystemUtils.showSystemUiRestartDialog(getActivity());
             return true;
         }
