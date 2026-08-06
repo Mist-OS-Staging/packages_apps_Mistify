@@ -104,6 +104,12 @@
             android:fragment="org.mist.settings.fragments.miscellaneous.SmartPixels"
             android:defaultValue="false" />
 
+        <Preference
+            android:key="quickswitch"
+            android:title="@string/quickswitch_launcher_title" 
+            android:summary="@string/quickswitch_launcher_summary" 
+            android:fragment="org.mist.settings.fragments.miscellaneous.QuickSwitch" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
