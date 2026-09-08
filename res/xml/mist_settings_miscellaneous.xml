@@ -124,6 +124,12 @@
             android:summary="@string/usb_default_config_summary"
             android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment" />
 
+        <org.mist.settings.preferences.SystemSettingSwitchPreference
+            android:key="screenshot_clipboard_only"
+            android:title="@string/screenshot_clipboard_only_title"
+            android:summary="@string/screenshot_clipboard_only_summary"
+            android:defaultValue="false" />
+
         <org.mist.settings.preferences.GlobalSettingSwitchPreference
             android:key="no_storage_restrict"
             android:title="@string/no_storage_restrict_title"
