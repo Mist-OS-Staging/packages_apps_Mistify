@@ -130,6 +130,12 @@
             android:summary="@string/screenshot_clipboard_only_summary"
             android:defaultValue="false" />
 
+        <org.mist.settings.preferences.SystemSettingSwitchPreference
+            android:key="hide_status_bar_in_screenshot"
+            android:title="@string/hide_status_bar_in_screenshot_title"
+            android:summary="@string/hide_status_bar_in_screenshot_summary"
+            android:defaultValue="false" />
+
         <org.mist.settings.preferences.GlobalSettingSwitchPreference
             android:key="no_storage_restrict"
             android:title="@string/no_storage_restrict_title"
