@@ -109,6 +109,13 @@
             android:summary="@string/themes_udfps_animation_summary"
             android:fragment="org.mist.settings.fragments.themes.UdfpsAnimation" />
 
+        <!-- Mistify Fluid Animation -->
+        <org.mist.settings.preferences.SystemSettingSwitchPreference
+            android:key="mist_fluid_animation_enabled"
+            android:title="@string/mist_fluid_animation_title"
+            android:summary="@string/mist_fluid_animation_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
