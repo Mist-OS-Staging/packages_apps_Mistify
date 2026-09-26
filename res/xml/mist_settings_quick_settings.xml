@@ -29,43 +29,10 @@
             android:defaultValue="0" />
 
         <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_ios_control_panel"
-            android:title="@string/ios_style"
-            android:summary="@string/ios_style_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_stock_media_player"
             android:title="@string/stock_qs_media_player"
             android:summary="@string/stock_qs_media_player_summary"
             android:defaultValue="false" />
-
-        <!-- Single Tone QS -->
-        <!--<org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="single_qs_tone_enabled"
-            android:title="@string/qs_single_tone_title"
-            android:summary="@string/qs_single_tone_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_tile_alternate_color"
-            android:title="@string/qs_tile_alternate_color_title"
-            android:summary="@string/qs_tile_alternate_color_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="notification_bg_alternate_color"
-            android:title="@string/notification_bg_alternate_color_title"
-            android:summary="@string/notification_bg_alternate_color_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SecureSettingListPreference
-            android:key="qs_show_media_player"
-            android:title="@string/qs_show_media_player_title"
-            android:summary="%s"
-            android:entries="@array/qs_show_media_player_entries"
-            android:entryValues="@array/qs_show_media_player_values"
-            android:defaultValue="2" />-->
 
         <!-- Waveform seekbar -->
         <org.mist.settings.preferences.SystemSettingSwitchPreference
@@ -74,13 +41,6 @@
             android:summary="@string/media_waveform_seekbar_summary"
             android:defaultValue="false" />
 
-        <!-- Squiggle animation for media notification -->
-        <!--<org.mist.settings.preferences.SecureSettingSwitchPreference
-            android:key="media_squiggle_animation"
-            android:title="@string/media_squiggle_animation_title"
-            android:summary="@string/media_squiggle_animation_summary"
-            android:defaultValue="true" />-->
-
         <org.mist.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_compact_media_player_mode"
             android:title="@string/qs_compact_media_player_mode_title"
@@ -88,11 +48,116 @@
             android:defaultValue="false" />
     </PreferenceCategory>
 
+    <!-- Panel Mode & Side -->
     <PreferenceCategory
-        android:key="qs_brightness_slider_category"
-        android:title="@string/quick_settings_brightness_slider_category">
+        android:key="ax_qs_panel_category"
+        android:title="@string/ax_qs_panel_category">
 
-        <!-- Brightness slider -->
+        <org.mist.settings.preferences.SecureSettingListPreference
+            android:key="ax_qs_panel_mode"
+            android:title="@string/ax_qs_panel_mode_title"
+            android:summary="%s"
+            android:entries="@array/ax_qs_panel_mode_entries"
+            android:entryValues="@array/ax_qs_panel_mode_values"
+            android:defaultValue="0" />
+
+        <org.mist.settings.preferences.SecureSettingListPreference
+            android:key="ax_qs_quick_panel_on_left"
+            android:title="@string/ax_qs_quick_panel_on_left_title"
+            android:summary="%s"
+            android:entries="@array/ax_qs_quick_panel_on_left_entries"
+            android:entryValues="@array/ax_qs_quick_panel_on_left_values"
+            android:defaultValue="0" />
+    </PreferenceCategory>
+
+    <!-- Quick Quick Settings (QQS) -->
+    <PreferenceCategory
+        android:key="ax_qqs_category"
+        android:title="@string/ax_qqs_category">
+
+        <org.mist.settings.preferences.SecureSettingSeekBarPreference
+            android:key="ax_qqs_tile_columns"
+            android:title="@string/ax_qqs_tile_columns_title"
+            settings:min="2"
+            android:max="6"
+            settings:interval="1"
+            android:defaultValue="4" />
+
+        <org.mist.settings.preferences.SecureSettingSeekBarPreference
+            android:key="ax_qqs_tile_rows"
+            android:title="@string/ax_qqs_tile_rows_title"
+            settings:min="1"
+            android:max="3"
+            settings:interval="1"
+            android:defaultValue="1" />
+
+        <org.mist.settings.preferences.SecureSettingSeekBarPreference
+            android:key="ax_qqs_control_columns"
+            android:title="@string/ax_qqs_control_columns_title"
+            settings:min="1"
+            android:max="4"
+            settings:interval="1"
+            android:defaultValue="2" />
+    </PreferenceCategory>
+
+    <!-- Full Quick Settings (QS) -->
+    <PreferenceCategory
+        android:key="ax_qs_category"
+        android:title="@string/ax_qs_category">
+
+        <org.mist.settings.preferences.SecureSettingSeekBarPreference
+            android:key="ax_qs_tile_columns"
+            android:title="@string/ax_qs_tile_columns_title"
+            settings:min="2"
+            android:max="6"
+            settings:interval="1"
+            android:defaultValue="4" />
+
+        <org.mist.settings.preferences.SecureSettingSeekBarPreference
+            android:key="ax_qs_tile_rows"
+            android:title="@string/ax_qs_tile_rows_title"
+            settings:min="2"
+            android:max="6"
+            settings:interval="1"
+            android:defaultValue="3" />
+
+        <org.mist.settings.preferences.SecureSettingSeekBarPreference
+            android:key="ax_qs_control_columns"
+            android:title="@string/ax_qs_control_columns_title"
+            settings:min="1"
+            android:max="4"
+            settings:interval="1"
+            android:defaultValue="2" />
+
+        <org.mist.settings.preferences.SecureSettingSwitchPreference
+            android:key="ax_qs_show_tile_labels"
+            android:title="@string/ax_qs_show_tile_labels_title"
+            android:summary="@string/ax_qs_show_tile_labels_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <!-- Sliders -->
+    <PreferenceCategory
+        android:key="ax_qs_sliders_category"
+        android:title="@string/ax_qs_sliders_category">
+
+        <org.mist.settings.preferences.SecureSettingListPreference
+            android:key="ax_qs_brightness_vertical_slider_style"
+            android:title="@string/ax_qs_brightness_vertical_slider_style_title"
+            android:summary="%s"
+            android:entries="@array/ax_qs_slider_style_entries"
+            android:entryValues="@array/ax_qs_slider_style_values"
+            android:defaultValue="0" />
+
+        <org.mist.settings.preferences.SecureSettingListPreference
+            android:key="ax_qs_volume_vertical_slider_style"
+            android:title="@string/ax_qs_volume_vertical_slider_style_title"
+            android:summary="%s"
+            android:entries="@array/ax_qs_slider_style_entries"
+            android:entryValues="@array/ax_qs_slider_style_values"
+            android:defaultValue="0" />
+
+        <!-- Stock Brightness slider toggle & position -->
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/quick_settings_show_brightness_slider_title"
@@ -100,22 +165,6 @@
             android:entryValues="@array/quick_settings_show_brightness_slider_values"
             android:defaultValue="1" />
 
-        <!-- Volume slider -->
-        <!--<org.mist.settings.preferences.SystemSettingListPreference
-            android:key="qs_show_volume_slider"
-            android:title="@string/qs_show_volume_slider_title"
-            android:entries="@array/qs_show_volume_slider_entries"
-            android:entryValues="@array/qs_show_volume_slider_values"
-            android:defaultValue="1" />
-
-        <org.mist.settings.preferences.SystemSettingListPreference
-            android:key="qs_brightness_slider_shape"
-            android:title="@string/qs_brightness_slider_shape_title"
-            android:entries="@array/qs_brightness_slider_shape_entries"
-            android:entryValues="@array/qs_brightness_slider_shape_values"
-            android:defaultValue="0" />-->
-
-        <!-- Brightness slider position -->
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_brightness_slider_position"
             android:title="@string/quick_settings_brightness_slider_position_title"
@@ -136,106 +185,42 @@
             android:title="@string/quick_settings_auto_brightness_icon_title"
             android:summary="@string/quick_settings_auto_brightness_icon_summary"
             android:defaultValue="true" />
-
-        <!--<org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_show_ringer_mode"
-            android:title="@string/qs_show_ringer_mode_title"
-            android:summary="@string/qs_show_ringer_mode_summary"
-            android:defaultValue="true" />-->
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
-        android:key="qs_layout_category"
-        android:title="@string/quick_settings_layout_category_title">
+    <!-- Appearance -->
+    <PreferenceCategory
+        android:key="ax_qs_appearance_category"
+        android:title="@string/ax_qs_appearance_category">
 
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_widget_panel"
-            android:title="@string/qs_widget_panel_title"
-            android:summary="@string/qs_widget_panel_summary"
-            android:defaultValue="false" />
+        <org.mist.settings.preferences.SecureSettingSeekBarPreference
+            android:key="system_blur_radius_pct"
+            android:title="@string/ax_qs_blur_radius_title"
+            android:summary="@string/ax_qs_blur_radius_summary"
+            settings:units="%"
+            settings:min="0"
+            android:max="100"
+            settings:interval="5"
+            android:defaultValue="80" />
+    </PreferenceCategory>
 
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_widget_ios_music"
-            android:title="@string/qs_widget_ios_music_title"
-            android:summary="@string/qs_widget_ios_music_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_widget_slider_corner"
-            android:title="@string/qs_widget_slider_corner_title"
-            android:summary="@string/qs_widget_slider_corner_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SystemSettingListPreference
-            android:key="qs_panel_style"
-            android:title="@string/qs_panel_style_title"
-            android:entries="@array/qs_panel_style_entries"
-            android:entryValues="@array/qs_panel_style_values"
-            android:defaultValue="0" />
-
-        <org.mist.settings.preferences.SystemSettingListPreference
-            android:key="qs_tile_shape"
-            android:title="@string/quick_settings_tile_shape_title"
-            android:entries="@array/quick_settings_tile_shape_entries"
-            android:entryValues="@array/quick_settings_tile_shape_values"
-            android:defaultValue="0" />
-
-        <org.mist.settings.preferences.QSTileIconShapePreference
-            android:key="qs_tile_icon_shape"
-            android:title="@string/quick_settings_tile_shape_title" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_tile_label_hide"
-            android:title="@string/quick_settings_tile_label_hide_title"
-            android:summary="@string/quick_settings_tile_label_hide_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SystemSettingListPreference
-            android:key="qs_tile_animation_style"
-            android:title="@string/qs_tile_animation_style_title"
-            android:entries="@array/qs_tile_animation_style_entries"
-            android:entryValues="@array/qs_tile_animation_style_values"
-            android:defaultValue="0" />
+    <!-- Layout / Spans -->
+    <PreferenceCategory
+        android:key="ax_qs_layout_category"
+        android:title="@string/ax_qs_layout_category">
 
         <Preference
-            android:key="qs_layout_columns_rows"
-            android:title="@string/quick_settings_layout_columns_rows_title"
-            android:summary="@string/quick_settings_layout_columns_rows_summary"
-            android:fragment="org.mist.settings.fragments.quicksettings.LayoutSettings" />
+            android:key="qs_tile_layout_info"
+            android:title="@string/ax_qs_tile_layout_info_title"
+            android:summary="@string/ax_qs_tile_layout_info_summary"
+            android:selectable="false" />
 
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_tile_haptic"
-            android:title="@string/quick_settings_brightness_slider_haptic_title"
-            android:summary="@string/quick_settings_tile_haptic_summary"
-            android:defaultValue="true" />
+        <Preference
+            android:key="qs_reset_layout"
+            android:title="@string/ax_qs_reset_layout_title"
+            android:summary="@string/ax_qs_reset_layout_summary" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="quick_settings_footer_category"
-        android:title="@string/quick_settings_footer_category">
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_show_data_usage"
-            android:title="@string/quick_settings_data_usage_title"
-            android:summary="@string/quick_settings_data_usage_summary"
-            android:defaultValue="false" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_footer_show_edit"
-            android:title="@string/quick_settings_footer_edit_icon_title"
-            android:defaultValue="true" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_footer_show_power_menu"
-            android:title="@string/quick_settings_footer_show_power_menu_title"
-            android:defaultValue="true" />
-
-        <org.mist.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_footer_show_settings"
-            android:title="@string/quick_settings_footer_settings_icon_title"
-            android:defaultValue="true" />
-    </PreferenceCategory>-->
-
+    <!-- Lock screen -->
     <PreferenceCategory
         android:key="quick_settings_lock_screen_category"
         android:title="@string/quick_settings_lock_screen_category">
