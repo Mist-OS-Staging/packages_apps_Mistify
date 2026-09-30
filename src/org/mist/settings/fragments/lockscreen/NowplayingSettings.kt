@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2026 Lunaris AOSP
+ * Copyright (C) 2024-2025 Lunaris AOSP
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,60 +13,59 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.mist.settings.fragments.lockscreen
 
 import android.content.Context
 import android.os.Bundle
+import android.provider.Settings
 import androidx.preference.Preference
-import androidx.preference.PreferenceGroup
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
 import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.search.SearchIndexable
-import com.android.settingslib.widget.FooterPreference
-import org.mist.settings.utils.PixelAmbientIndicationDetector
+
+import org.mist.settings.preferences.SystemSettingSwitchPreference
 
 @SearchIndexable
-class NowPlayingSettings : SettingsPreferenceFragment() {
+class NowPlayingSettings : SettingsPreferenceFragment(),
+    Preference.OnPreferenceChangeListener {
 
-    private var infoFooterPref: FooterPreference? = null
-
-    private val isNativePixelAmbientIndication: Boolean by lazy {
-        PixelAmbientIndicationDetector.shouldUseNativeAmbientIndication(requireContext())
-    }
+    private var compactStylePref: SystemSettingSwitchPreference? = null
+    private var artistTextSizePref: Preference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.nowplaying_settings)
 
-        infoFooterPref = findPreference("nowplaying_info_footer")
+        compactStylePref = findPreference("nowplaying_use_compact_style")
+        artistTextSizePref = findPreference("nowplaying_artist_text_size")
 
-        if (isNativePixelAmbientIndication) {
-            disableAllPreferencesForNativePixel()
-        }
+        compactStylePref?.onPreferenceChangeListener = this
+
+        updateArtistTextSizeVisibility()
     }
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
         return super.onPreferenceTreeClick(preference)
     }
 
-    private fun disableAllPreferencesForNativePixel() {
-        val screen = preferenceScreen
-        for (i in 0 until screen.preferenceCount) {
-            disableRecursively(screen.getPreference(i))
+    override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
+        if (preference.key == "nowplaying_use_compact_style") {
+            updateArtistTextSizeVisibility()
         }
-        infoFooterPref?.title = getString(R.string.nowplaying_pixel_native_footer)
+        return true
     }
 
-    private fun disableRecursively(pref: Preference) {
-        if (pref === infoFooterPref) return
-        pref.isEnabled = false
-        if (pref is PreferenceGroup) {
-            for (i in 0 until pref.preferenceCount) {
-                disableRecursively(pref.getPreference(i))
-            }
-        }
+    private fun updateArtistTextSizeVisibility() {
+        val isCompactEnabled = Settings.System.getInt(
+            contentResolver,
+            "nowplaying_use_compact_style",
+            0
+        ) == 1
+
+        artistTextSizePref?.isVisible = !isCompactEnabled
     }
 
     override fun getMetricsCategory(): Int {
@@ -80,7 +79,19 @@ class NowPlayingSettings : SettingsPreferenceFragment() {
         @JvmField
         val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.nowplaying_settings) {
             override fun getNonIndexableKeys(context: Context): List<String> {
-                return super.getNonIndexableKeys(context)
+                val keys = super.getNonIndexableKeys(context).toMutableList()
+                
+                val isCompactEnabled = Settings.System.getInt(
+                    context.contentResolver,
+                    "nowplaying_use_compact_style",
+                    0
+                ) == 1
+                
+                if (isCompactEnabled) {
+                    keys.add("nowplaying_artist_text_size")
+                }
+                
+                return keys
             }
         }
     }
